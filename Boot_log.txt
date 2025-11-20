@@ -1,0 +1,1689 @@
+NDI>Tdma1 ini_ver 0x11220812
+ETH trim = 00001BE8
+speed 0000042A
+Non S3
+>ddr3
+WT = 101F0113
+dma ok
+
+UNZOK!
+Loader Start ...
+LD_VER 04.01.0F
+
+560_DRAM1_1066_4096Mb 11/02/2022 09:32:32
+
+No card inserted
+Pad driving increased
+SPI NAND MID=000000C8 DEV=00000051
+tmp_addr 0x02000000
+LdCtrl2 0x00000000
+uboot_addr 0x1E000000
+uboot_size 0x01FC0000
+nodep 0x00103A8C
+NVT_LINUX_SMP_OFFfdt 0x00100000
+shm 0x00200000
+jump 0x1E000000
+
+
+U-Boot 2019.04 (Nov 29 2022 - 11:22:06 +0800)
+
+CPU:   Novatek NT @ 960 MHz
+DRAM:  512 MiB
+Relocation to 0x1ff07000, Offset is 0x01f07000 sp at 1fbffbe0
+nvt_shminfo_init:  The fdt buffer addr: 0x1fc05648
+ARM CA9 global timer had already been initiated
+otp_init!
+120MHz
+otp_timing_reg= 0xff6050
+ CONFIG_MEM_SIZE                =      0x20000000
+ CONFIG_NVT_UIMAGE_SIZE         =      0x01900000
+ CONFIG_NVT_ALL_IN_ONE_IMG_SIZE =      0x14a00000
+ CONFIG_UBOOT_SDRAM_BASE        =      0x1e000000
+ CONFIG_UBOOT_SDRAM_SIZE        =      0x01fc0000
+ CONFIG_LINUX_SDRAM_BASE        =      0x01100000
+ CONFIG_LINUX_SDRAM_SIZE        =      0x0cf00000
+ CONFIG_LINUX_SDRAM_START       =      0x1c700000
+NAND:  drv_nand_reset: spi flash pinmux 0x80000
+ecc-mode = <0>
+nand chip_sel = <0>
+id =  0xc8 0x51 0xc8 0x51
+use flash on-die ecc
+nvt spinand 4-bit mode @ 80000000 Hz
+128 MiB
+MMC:   mmc_nvt_parse_driving: sdio pinmux 0x5
+mmc_nvt_parse_driving: sdio pinmux 0x5
+NVT_MMC0: 0, NVT_MMC1: 1
+ misc_init_r: Firmware name: FW98560A.bin FW98560T.bin FW98560A.fdt.bin
+ misc_init_r: boot time: 288263(us)
+nvt_detect_fw_tbin: Boot from flash or emmc
+No need to update (FW98560A.bin)
+
+NAND read: device 0 offset 0x40000, size 0x20000
+ 131072 bytes read: OK
+mtdparts=mtdparts=spi_nand.0:0x40000@0x40000(fdt),0x100000@0x80000(uboot),0x400000@0x180000(linux),0xf00000@0x580000(rootfs0),0xb00000@0x1480000(app)
+ misc_init_r: boot time: 389268(us)
+DTS find cpu freq clock 960MHz
+Set CPU clk 960MHz
+ misc_init_r: boot time: 467844(us)
+Net:   na51089_eth_initialize 1.0.0.3
+eth_parse_phy_intf: led-inv len -1
+eth_parse_phy_intf: inv-led 0
+eth_parse_phy_intf: phy-intf 0x0
+eth_na51089
+Flash partition:
+    index:0, name:loader, order:0, start:0x0, size:0x40000
+    index:1, name:fdt, order:0, start:0x40000, size:0x40000
+    index:2, name:uboot, order:0, start:0x80000, size:0x100000
+    index:3, name:kernel, order:0, start:0x180000, size:0x400000
+    index:4, name:rootfs, order:0, start:0x580000, size:0xf00000
+    index:5, name:app, order:0, start:0x1480000, size:0xb00000
+    index:6, name:para, order:0, start:0x1f80000, size:0x400000
+    index:7, name:sp, order:0, start:0x2380000, size:0x80000
+    index:8, name:ext_para, order:0, start:0x2400000, size:0x80000
+    index:9, name:download, order:0, start:0x2480000, size:0x1b80000
+    index:10, name:all, order:0, start:0x0, size:0x4000000
+    index:11, name:, order:0, start:0x0, size:0x0
+    index:12, name:, order:0, start:0x0, size:0x0
+    index:13, name:, order:0, start:0x0, size:0x0
+    index:14, name:, order:0, start:0x0, size:0x0
+    index:15, name:, order:0, start:0x0, size:0x0
+    index:16, name:, order:0, start:0x0, size:0x0
+    index:17, name:, order:0, start:0x0, size:0x0
+    index:18, name:, order:0, start:0x0, size:0x0
+    index:19, name:, order:0, start:0x0, size:0x0
+gpio:49 key_val:1.
+disable H_GPIO_5
+>>>>>>>begin update imgs.
+load data from flash:0x2480000 to memory:01800000.
+upd_do_read 0x20000 byte from flash:0x2480000 to buf:01800000, lim=0x5b80000.
+load:131072 byte from flash:0x2480000 to memory:01800000, flash totalsize:0x8000000 can used size:0x8000000.
+show_hex len:64.
+ff ff ff ff ff ff ff ff  ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff  ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff  ff ff ff ff ff ff ff ff
+ff ff ff ff ff ff ff ff  ff ff ff ff ff ff ff ff
+
+checking...
+before check imgs:
+~~~invalid magic:0xffffffff
+upgrade file corrupt,skip...
+corrupt...
+Hit ctrl + c to stop autoboot:  0
+ do_nvt_boot_cmd: boot time: 726002(us)
+NVT firmware boot.....
+nvt_detect_fw_tbin: Boot from flash or emmc
+
+NAND read: device 0 offset 0x180000, size 0x40
+ 64 bytes read: OK
+
+NAND read: device 0 offset 0x180000, size 0x1e1e18
+ 1973784 bytes read: OK
+nvt_ker_img_ungzip_linux: not gzip linux
+nvt_boot_linux_bin_auto: linux_addr:0x1c700000
+nvt_boot_linux_bin_auto: linux_size:0x001e1e18
+ do_nvt_boot_cmd: boot time: 879189(us)
+do_nvt_boot_cmd: bootargs:earlyprintk console=ttyS0,115200 rootwait nprofile_irq_duration=on ubi.block=0,0 root=/dev/ubiblock0_0 rootfstype=squashfs init=/linuxrc   ubi.mtd=4 ro   bootts=187834,883522 resume_addr=0x00200088 user_debug=0xff
+   Image Name:   Linux-4.19.91
+   Image Type:   ARM Linux Kernel Image (uncompressed)
+   Data Size:    1973720 Bytes = 1.9 MiB
+   Load Address: 00008000
+   Entry Point:  00008000
+ Linux Image is at 1c700000, uboot fdt image is at 1fc05648, loader tmp fdt address is at 100000
+bootm 1c700000 - 1fc05648
+ do_nvt_boot_cmd: boot time: 932226(us)
+ do_nvt_boot_cmd: Uboot boot time:
+        start:  187834 us
+        ending: 883522 us
+## Booting kernel from Legacy Image at 1c700000 ...
+   Image Name:   Linux-4.19.91
+   Image Type:   ARM Linux Kernel Image (uncompressed)
+   Data Size:    1973720 Bytes = 1.9 MiB
+   Load Address: 00008000
+   Entry Point:  00008000
+   Verifying Checksum ... OK
+## Flattened Device Tree blob at 1fc05648
+   Booting using the fdt blob at 0x1fc05648
+   Loading Kernel Image
+   Loading Device Tree to 0fff8000, end 0ffff2ca ... OK
+
+Starting kernel ...
+
+ACTLR: 0x00000004
+ACTLR: 0x00000044
+Disable MMU
+Clear MMU
+Uboot L2 cache aux val: 0x72420000
+Uboot L2 cache prefetch ctrl val: 0x70800000
+Uboot L2 cache ctrl val: 0x00000000
+Done
+Uncompressing Linux... done, booting the kernel.
+Booting Linux on physical CPU 0x0
+Linux version 4.19.91 (zyc@ubuntu) (gcc version 8.4.0 (Buildroot 2020.02.9-3-g58c1c2e-dirty)) #8 PREEMPT Thu Nov 24 16:25:18 CST 2022
+CPU: ARMv7 Processor [414fc091] revision 1 (ARMv7), cr=10c5387d
+CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+OF: fdt: Machine model: Novatek NA51089
+Memory policy: Data cache writeback
+OF: fdt: Reserved memory: failed to reserve memory for node 'cma0@0x04000000': base 0x04000000, size 0 MiB
+CPU: All CPU(s) started in SVC mode.
+random: get_random_bytes called from start_kernel+0x80/0x354 with crng_init=0
+Built 1 zonelists, mobility grouping on.  Total pages: 65024
+Kernel command line: earlyprintk console=ttyS0,115200 rootwait nprofile_irq_duration=on ubi.block=0,0 root=/dev/ubiblock0_0 rootfstype=squashfs init=/linuxrc   ubi.mtd=4 ro   bootts=187834,883522 resume_addr=0x00200088 user_debug=0xff
+Dentry cache hash table entries: 32768 (order: 5, 131072 bytes)
+Inode-cache hash table entries: 16384 (order: 4, 65536 bytes)
+Memory: 254196K/262144K available (3746K kernel code, 222K rwdata, 1192K rodata, 176K init, 161K bss, 7948K reserved, 0K cma-reserved)
+Virtual kernel memory layout:
+    vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+    fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+    vmalloc : 0x90800000 - 0xff800000   (1776 MB)
+    lowmem  : 0x80000000 - 0x90000000   ( 256 MB)
+    modules : 0x7f000000 - 0x80000000   (  16 MB)
+      .text : 0x80008000 - 0x803b0ba0   (3747 kB)
+      .init : 0x804dc000 - 0x80508000   ( 176 kB)
+      .data : 0x80508000 - 0x8053fa60   ( 223 kB)
+       .bss : 0x8053fa75 - 0x8056812c   ( 162 kB)
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+rcu: Preemptible hierarchical RCU implementation.
+        Tasks RCU enabled.
+NR_IRQS: 384
+L2C-310 enabling early BRESP for Cortex-A9
+L2C-310 full line of zeros enabled for Cortex-A9
+L2C-310 ID prefetch enabled, offset 1 lines
+L2C-310 dynamic clock gating enabled, standby mode enabled
+L2C-310 cache controller enabled, 8 ways, 128 kB
+L2C-310: CACHE_ID 0x410000c9, AUX_CTRL 0x76420001
+APIs of flush/clean all cache are supported
+novatek_clock_init
+sched_clock: 64 bits at 120MHz, resolution 8ns, wraps every 4398046511102ns
+clocksource: arm_global_timer: mask: 0xffffffffffffffff max_cycles: 0x3759f22983, max_idle_ns: 881590413697 ns
+Switching to timer-based delay loop, resolution 8ns
+Calibrating delay loop (skipped), value calculated using timer frequency.. 240.00 BogoMIPS (lpj=1200000)
+pid_max: default: 4096 minimum: 301
+Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+CPU: Testing write buffer coherency: ok
+Setting up static identity map for 0x81c0 - 0x81fc
+rcu: Hierarchical SRCU implementation.
+devtmpfs: initialized
+VFP support v0.3: implementor 41 architecture 3 part 30 variant 9 rev 4
+NVTBOOTTS: nvt_bootts_proc_init initial success
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+futex hash table entries: 16 (order: -4, 448 bytes)
+pinctrl core: initialized pinctrl subsystem
+NET: Registered protocol family 16
+DMA: preallocated 256 KiB pool for atomic coherent allocations
+*** nvt_poweroff_setup
+nvt_otp_module_init
+nvt_vos: 1.00.007 (Nov 16 2022 17:27:36)
+*** disable_cnn Get CNN2 Clock error
+nvt_gpio f0070000.gpio: Register nvt_gpio_probe successfully
+nvt_i2c f0220000.i2c: i2c_nvtim_busclr
+nvt_i2c f0220000.i2c: i2c_nvtim_rst_module: staus 0x10000000
+nvt_i2c f0220000.i2c: Register nvtim_i2c_probe successfully ver:1.00.016
+nvt_i2c f0350000.i2c2: i2c_nvtim_busclr
+nvt_i2c f0350000.i2c2: i2c_nvtim_rst_module: staus 0x10000000
+nvt_i2c f0350000.i2c2: Register nvtim_i2c_probe successfully ver:1.00.016
+nvt_i2c f03a0000.i2c3: i2c_nvtim_busclr
+nvt_i2c f03a0000.i2c3: i2c_nvtim_rst_module: staus 0x10000000
+nvt_i2c f03a0000.i2c3: Register nvtim_i2c_probe successfully ver:1.00.016
+clocksource: Switched to clocksource arm_global_timer
+kdrv_builtin_init init module ==========
+nvt_jpg version: 1.00.011
+kdrv_builtin_init init module ==========
+NET: Registered protocol family 2
+tcp_listen_portaddr_hash hash table entries: 256 (order: 0, 6144 bytes)
+TCP established hash table entries: 2048 (order: 1, 8192 bytes)
+TCP bind hash table entries: 2048 (order: 3, 40960 bytes)
+TCP: Hash tables configured (established 2048 bind 2048)
+UDP hash table entries: 128 (order: 0, 6144 bytes)
+UDP-Lite hash table entries: 128 (order: 0, 6144 bytes)
+NET: Registered protocol family 1
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+Initialise system trusted keyrings
+workingset: timestamp_bits=30 max_order=16 bucket_order=0
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+Key type asymmetric registered
+Asymmetric key parser 'x509' registered
+Block layer SCSI generic (bsg) driver version 0.4 loaded (major 249)
+io scheduler noop registered (default)
+comm pwm driver probe
+f0290000.uart: ttyS0 at MMIO 0xf0290000 (irq = 6, base_baud = 1500000) is a NVT
+nvt_serial: console setup on port #0
+console [ttyS0] enabled
+f0300000.uart: ttyS1 at MMIO 0xf0300000 (irq = 7, base_baud = 3000000) is a NVT
+f0310000.uart: ttyS2 at MMIO 0xf0310000 (irq = 8, base_baud = 3000000) is a NVT
+nvt_serial: driver initialized
+loop: module loaded
+nand: device found, Manufacturer ID: 0xc8, Chip ID: 0x51
+nand: ESMT GD5F1GQ4UEYIH 1GiB 3.3V
+nand: 128 MiB, SLC, erase size: 128 KiB, page size: 2048, OOB size: 128
+Scanning device for bad blocks
+random: fast init done
+Bad eraseblock 824 at 0x000006700000
+Bad eraseblock 916 at 0x000007280000
+Bad eraseblock 1022 at 0x000007fc0000
+spi_nand f0400000.nand: 4-bit mode @ 80000000 Hz
+11 fixed-partitions partitions found on MTD device spi_nand.0
+Creating 11 MTD partitions on "spi_nand.0":
+0x000000000000-0x000000040000 : "loader"
+0x000000040000-0x000000080000 : "fdt"
+0x000000080000-0x000000180000 : "uboot"
+0x000000180000-0x000000580000 : "kernel"
+0x000000580000-0x000001480000 : "rootfs"
+0x000001480000-0x000001f80000 : "app"
+0x000001f80000-0x000002380000 : "para"
+0x000002380000-0x000002400000 : "sp"
+0x000002400000-0x000002480000 : "ext_para"
+0x000002480000-0x000004000000 : "download"
+0x000000000000-0x000004000000 : "all"
+nvt_rtc f0060000.rtc: rtc core: registered nvt_rtc as rtc0
+nvt_adc_probe: f0260000.adc done voltage 2688 ver 1.02.100
+thermal thermal_zone0: Thermal Sensor probe
+NET: Registered protocol family 17
+Registering SWP/SWPB emulation handler
+Loading compiled-in X.509 certificates
+ubi0: default fastmap pool size: 8
+ubi0: default fastmap WL pool size: 4
+ubi0: attaching mtd4
+ubi0: scanning is finished
+ubi0 warning: ubi_eba_init: cannot reserve enough PEBs for bad PEB handling, reserved 24, need 30
+ubi0: attached mtd4 (name "rootfs", size 15 MiB)
+ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+ubi0: good PEBs: 120, bad PEBs: 0, corrupted PEBs: 0
+ubi0: user volume: 1, internal volumes: 1, max. volumes count: 128
+ubi0: max/mean erase counter: 1/0, WL threshold: 4096, image sequence number: 665391752
+ubi0: available PEBs: 0, total reserved PEBs: 120, PEBs reserved for bad PEB handling: 24
+ubi0: background thread "ubi_bgt0d" started, PID 41
+block ubiblock0_0: created from ubi0:0(rootfs)
+nvt_rtc f0060000.rtc: setting system clock to 2025-11-20 15:46:52 UTC (1763653612)
+VFS: Mounted root (squashfs filesystem) readonly on device 254:0.
+devtmpfs: mounted
+Freeing unused kernel memory: 176K
+This architecture does not have kernel memory protection.
+Run /linuxrc as init process
+mount: mounting debugfs on /sys/kernel/debug failed: No such file or directory
+[Start] /etc/init.d/S00_PreReady
+ubi1: default fastmap pool size: 8
+ubi1: default fastmap WL pool size: 4
+ubi1: attaching mtd5
+ubi1: scanning is finished
+ubi1 warning: ubi_eba_init: cannot reserve enough PEBs for bad PEB handling, reserved 12, need 30
+ubi1: attached mtd5 (name "app", size 11 MiB)
+ubi1: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+ubi1: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+ubi1: VID header offset: 2048 (aligned 2048), data offset: 4096
+ubi1: good PEBs: 88, bad PEBs: 0, corrupted PEBs: 0
+ubi1: user volume: 1, internal volumes: 1, max. volumes count: 128
+ubi1: max/mean erase counter: 1/0, WL threshold: 4096, image sequence number: 1757879913
+ubi1: available PEBs: 0, total reserved PEBs: 88, PEBs reserved for bad PEB handling: 12
+ubi1: background thread "ubi_bgt1d" started, PID 49
+block ubiblock1_0: created from ubi1:0(app)
+/
+[Start] /etc/init.d/S07_SysInit
+nvt_mmc f0420000.mmc: cd_gpio is invalid
+nvt_mmc f0420000.mmc: Using DMA, 4-bit mode sampling Positive edge, mmc0
+nvt_mmc f0500000.mmc: Using DMA, 4-bit mode sampling Positive edge, mmc1
+watchdog_monitor_start watchdog_timeout:30, time_out:90
+[Start] /etc/init.d/S10_SysInit2
+nvtmem: loading out-of-tree module taints kernel.
+nvtmem: module license 'Proprietary' taints kernel.
+Disabling lock debugging due to kernel taint
+NVTMEM: 0.0.2
+log.ko v1.4: Nov  8 2022 16:10:33 (mmap 0x8e800000 size 0x21800)
+
+LOG base 0x8f370c00(ddr0) size 1K (start pointer 0x7f05adf4)
+PAGE_OFFSET(0x80000000) VMALLOC START(0x90800000) HZ(100)
+
+
+nvt_csi_probe:not fast boot
+nvtmpp_init_mmz: ddr1 pa = 0x10000000 va = 0x91000000 , size = 0x10000000
+affine_neon_module_initial: successfully
+
+faile to get clock0 source
+h26x kdrv version: 0.3.11, nvt codec version 0.3.11.0
+nvt_audlib_aac_module_init:
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8FA8DA00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8F130000
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8F10A400
+[Start] /etc/init.d/S12_USB_4G
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+nvtim_init_usbhc
+nvtim_init_usbhc assert reset
+R0x40=0x30230001
+ehci-nvtivot f0600000.nvt_usb2host: usbhc-nvtivot
+ehci-nvtivot f0600000.nvt_usb2host: new USB bus registered, assigned bus number 1
+ehci-nvtivot f0600000.nvt_usb2host: irq 52, io mem 0xff600000
+ehci-nvtivot f0600000.nvt_usb2host: USB 2.0 started, EHCI 1.00, overcurrent ignored
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 1 port detected
+usbcore: registered new interface driver option
+usbserial: USB Serial support registered for GSM modem (1-port)
+nvtim_patch_usbhc channel
+usbcore: registered new interface driver cdc_wdm
+usbcore: registered new interface driver qmi_wwan_q
+[Start] /etc/init.d/S15_NvtAppInit
+[Start] /etc/init.d/S25_Net
+crond[331]: crond (busybox 1.31.1) started, log level 8
+
+libphy: Fixed MDIO Bus: probed
+nvt_eth_env_probe: get IO MEM 0xfd2b0000
+nvt_eth_env_probe: pinmux detect emb phy 0x0
+DWC_ETH_QOS: Phy detected at ID/ADDR 0
+libphy: dwc_phy: probed
+nvt_resume: find node
+nvt_resume: led-inv = 0
+nvt_resume: pinmux 0x0
+Supports TSO, SG and TX COE
+Supports RX COE and GRO
+phydev exist: resume phy
+nvt_resume: find node
+nvt_resume: led-inv = 0
+nvt_resume: pinmux 0x0
+DWC_ETH_QOS_yinit: apb_clk 120000000 Hz
+Queue0 Tx fifo size 2048, Rx fifo size 2048
+Disabled JUMBO pkt
+Enabled Rx watchdog timer
+Enabled TSO
+Disabled Rx Split header mode
+phydev exist: start phy
+Configuring loopback interface
+/etc/init.d/S25_Net: line 47: telnetd: not found
+[Start] /etc/init.d/S99_Sysctl
+/dev/root / squashfs ro,relatime 0 0
+devtmpfs /dev devtmpfs rw,relatime 0 0
+proc /proc proc rw,relyaffs: dev is 32505862 name is "mtdblock6" rw
+atime 0 0
+sysfs /sys sysfs rw,relatime 0 0
+tmpfs /tmp tmpfs rwyaffs: passed flags "inband-tags"
+,nosuid,nodev,noatime,mode=1777 0 0
+tmpfs /var/run tmpfs rw,nosuid,relatime 0 0
+tmpfs /mnt/tmp tmpfs rw,nosuid,nodev,noatime,mode=1777 0 0
+/dev/ubiblock1_0 /mnt/app squashfs ro,relatime 0 0
+devpts /dev/pts devpts rw,relatime,mode=600,ptmxmode=000 0 0
+/etc/init.d/start_app: line 24: ./vg_boot.sh: not found
+>>>>>>>>>>start_app support_ptz:0
+spawn-fcgi: child spawned successfully: PID: 451
+run cgiserver ok
+/
+chmod: /etc/init.d/drop_cache.sh: Read-only file system
+(none) login: sensor type in dvr.xml:28 2nd_sensor(0).
+support_wifi:0
+setup signal pipe ignore,pid:440 440
+rpc:ALAM create event:ALAM connect to ifname :/dev/ROUT
+sensor type in dvr.xml:28 2nd_sensor(0).
+support_wifi:0
+setup signal pipe ignore,pid:439 439
+rpc:RECM create event:RECM connect to ifname :/dev/ROUT
+setup signal pipe ignore,pid:441 441
+rpc:NTSM create event:NTSM connect to ifname :/dev/ROUT
+setup signal pipe ignore,pid:448 448
+rpc:FTPM create event:FTPM connect to ifname :/dev/ROUT
+setup signal pipe ignore,pid:442 442
+rpc:NTCM create event:NTCM connect to ifname :/dev/ROUT
+sensor type in dvr.xml:28 2nd_sensor(0).
+support_wifi:0
+SP block:/dev/mtd7 type:0.
+libstaticparameter Version[NT98560_HYBRID]:2023-01-07 10:28:44 by pyc
+Sp_init Sp_read_data_from_nand,dev:/dev/mtd7 offset:0 read_len:65536 fd:3
+Sp_init(/dev/mtd7)
+setup signal pipe ignore,pid:446 446
+rpc:FACM create event:FACM connect to ifname :/dev/ROUT
+setup signal pipe ignore,pid:444 444
+rpc:CLOUDM create event:CLOUDM connect to ifname :/dev/ROUT
+SP block:/dev/mtd7 type:0.
+libstaticparameter Version[NT98560_HYBRID]:2023-01-07 10:28:44 by pyc
+Sp_init Sp_read_data_from_nand,dev:/dev/mtd7 offset:0 read_len:65536 fd:3
+Sp_init(/dev/mtd7)
+sensor type in dvr.xml:28 2nd_sensor(0).
+support_wifi:0
+setup signal pipe ignore,pid:445 445
+rpc:PUSM create event:PUSM connect to ifname :/dev/ROUT
+setup signal pipe ignore,pid:447 447
+rpc:RTPM create event:RTPM connect to ifname :/dev/ROUT
+sensor type in dvr.xml:28 2nd_sensor(0).
+support_wifi:0
+SP block:/dev/mtd7 type:0.
+libstaticparameter Version[NT98560_HYBRID]:2023-01-07 10:28:44 by pyc
+Sp_init Sp_read_data_from_nand,dev:/dev/mtd7 offset:0 read_len:65536 fd:3
+Sp_init(/dev/mtd7)
+DWC_ETH_QOS_adjust_link: start tx/rx
+DWC_ETH_QOS f02b0000.eth eth0: Link is Up - 100Mbps/Full - flow control rx/tx
+
+libstaticparameter Version[NT98560_HYBRID]:2023-01-07 10:28:44 by pyc
+_ep_init read_data_from_nand,dev:/dev/mtd8 offset:0 read_len:65536 fd:3
+libstreambuffer Version[NT98560_HYBRID]:2022-11-22 20:15:51 by lgb
+chan:0 type:0 for debug init_keyframe
+chan:0 type:1 for debug init_keyframe
+chan:1 type:0 for debug init_keyframe
+chan:1 type:1 for debug init_keyframe
+setup signal pipe ignore,pid:437 437
+listen to ifname :/dev/ROUT
+event:CLOUDM connected ok
+event:FACM connected ok
+bc_cfg init success
+event:RTPM connected ok
+SP block:/dev/mtd7 type:0.
+libstaticparameter Version[NT98560_HYBRID]:2023-01-07 10:28:44 by pyc
+hardware restart!
+event:PUSM connected ok
+event:NTSM connected ok
+[cfg_dst_tz.cpp:183]:check dst param ok
+Sp_init Sp_read_data_from_nand,dev:/dev/mtd7 offset:0 read_len:65536 fd:6
+Sp_init(/dev/mtd7)
+[cfg_dst_tz.cpp:183]:check dst param ok
+Thread[wq_process] pid[466]
+sensor type in dvr.xml:28 2nd_sensor(0).
+support_wifi:0
+pnode->Attribute(dhcp) != NULL!!!
+plink_wifi->station.netbase.dhcp123 = 1
+link ip = 192.168.0.101
+link gateway = 192.168.0.1
+link netmask = 255.255.255.0
+link dns1 = 192.168.0.1
+load link ok
+[cfg_link.cpp:79]:start lan def
+sensor type in dvr.xml:28 2nd_sensor(0).
+support_wifi:0
+read szbcs_mac failed, use random mac as default!
+[cfg_link.cpp:210]:end lan defload link ok
+load link ok
+load link ok
+load link ok
+load link ok
+Thread[wq_process] pid[467]
+Thread[wq_process] pid[468]
+[cfg_enc.cpp:1360]:main reso found !!!
+[cfg_enc.cpp:1378]:sub reso found !!!!, n_sub_reso = 42
+[cfg_enc.cpp:1360]:main reso found !!!
+[cfg_enc.cpp:1378]:sub reso found !!!!, n_sub_reso = 42
+onvif support autotrack stream
+Open /dev/at88sc0104 error!
+SP block:/dev/mtd7 type:0.
+libstaticparameter Version[NT98560_HYBRID]:2023-01-07 10:28:44 by pyc
+Sp_init Sp_read_data_from_nand,dev:/dev/mtd7 offset:0 read_len:65536 fd:6
+Sp_init(/dev/mtd7)
+sensor type in dvr.xml:28 2nd_sensor(0).
+support_wifi:0
+libstreambuffer Version[NT98560_HYBRID]:2022-11-22 20:15:51 by lgb
+shmget: No such file or directory
+shmget: No such file or directory
+shmget: No such file or directory
+shmget: No such file or directory
+shmget: No such file or directory
+shmget: No such file or directory
+Thread[wq_process] pid[469]
+sensor type in dvr.xml:28 2nd_sensor(0).
+support_wifi:0
+setup signal pipe ignore,pid:443 443
+[cfg_file_manager.cpp:2091]:load md config ok
+rpc:UPDM create event:UPDM connect to ifname :/dev/ROUT
+[cfg_file_manager.cpp:2091]:load md config ok
+accept alarmin :0
+accept alarmin :0
+[bcs_rcv_update_img.cpp:438]:update policy:1 flash size:0x1b80000 erasesize:0x20000 downlaod parttion info:/dev/mtd9(0x1b80000) Reserved Blocks:8.
+[bcs_rcv_update_img.cpp:368]:current version info:
+[bcs_rcv_update_img.cpp:369]:platform:IPC_560B218MP_P.
+[bcs_rcv_update_img.cpp:370]:main_version:1783_23121201.
+[bcs_rcv_update_img.cpp:371]:files:6.
+[bcs_rcv_update_img.cpp:375]:file:0 name:loader ver:4771 forbid_olup:1 updirect:0.
+[bcs_rcv_update_img.cpp:375]:file:1 name:fdt ver:5061 forbid_olup:1 updirect:0.
+[bcs_rcv_update_img.cpp:375]:file:2 name:uboot ver:5062 forbid_olup:1 updirect:0.
+[bcs_rcv_update_img.cpp:375]:file:3 name:kernel ver:5027 forbid_olup:0 updirect:0.
+[bcs_rcv_update_img.cpp:375]:file:4 name:rootfs ver:5438 forbid_olup:0 updirect:0.
+[bcs_rcv_update_img.cpp:375]:file:5 name:app ver:v3.0.0.1783_23121201 forbid_olup:0 updirect:0.
+[bcs_rcv_update_img.cpp:476]:bcs_rcv_img_init succ.
+Thread[wq_process] pid[470]
+setup signal pipe ignore,pid:449 449
+rpc:OVFM create event:OVFM connect to ifname :/dev/ROUT
+sensor type in dvr.xml:28 2nd_sensor(0).
+support_wifi:0
+SP block:/dev/mtd7 type:0.
+libstaticparameter Version[NT98560_HYBRID]:2023-01-07 10:28:44 by pyc
+Sp_init Sp_read_data_from_nand,dev:/dev/mtd7 offset:0 read_len:65536 fd:3
+Sp_init(/dev/mtd7)
+libinfostatistic Version[NT98560_HYBRID]:2022-11-22 20:06:16 by lgb
+setup signal pipe ignore,pid:438 438
+rpc:DECM create event:DECM connect to ifname :/dev/ROUT
+get bino camera height difference failed.
+get bino camera width difference failed.
+get zf table failed.
+get bino camera height difference failed.
+get bino camera width difference failed.
+get zf table failed.
+get bino camera height difference failed.
+get bino camera width difference failed.
+get zf table failed.
+[cfg_mcu_comm.cpp:495]:set fail
+[bc_cfg.cpp:1046]:brecord_voice:0, cbw_type:0, flip:0, led_type:0, mirror:0, wl_type:0, wl_preview:0, wl_tlps:0, firstframe_strategy:0, mask.num:0, mask.enable:0, mask.masks[0].x:0, mask.masks[0].y:0, mask.masks[0].w:0, mask.masks[0].h:0, bopen_big_alarm_audio:0, bopen_small_alarm_audio:0, bhdr:0, h_diff:0, w_mix:0, bchn_switch:0
+[cmd]echo wdt > /mnt/tmp/wdt_flag [ret]:0
+ALAM, DECM, PUSM, RECM, UPDM, NTSM, NTCM, FTPM, CGIM, OVFM, RTPM, FACM, CLOUDM, [route.cpp:894]:
+expect mod_cnt(13)
+on_sys_cfg_modify.
+Thread[wq_process] pid[473]
+will malloc lenght:32
+success malloc lenght:32
+will malloc lenght:32
+success malloc lenght:32
+bc_auth::on_configed binit=[1]. supprot_wifi_init_password=[0].
+bc_auth::on_configed auth after init, user list num(2)
+mod:ROUT bc_kv_set_stat :3 ok
+get bino camera height difference failed.
+get bino camera width difference failed.
+get zf table failed.
+[cfg_file_manager.cpp:7341]:do not support stitch cfg
+[cfg_file_manager.cpp:7341]:do not support stitch cfg
+[cfg_file_manager.cpp:7932]:file is existed
+accepted event:/dev/CLOUDM
+accepted event:/dev/FACM
+time zone:GMT-1:00:00DST-2:00:00,M3.5.0/02:00:00,M10.4.0/03:00:00
+accepted event:/dev/RTPM
+time zone:GMT-1:00:00DST-2:00:00,M3.5.0/02:00:00,M10.4.0/03:00:00
+accepted event:/dev/PUSM
+time zone:GMT-1:00:00DST-2:00:00,M3.5.0/02:00:00,M10.4.0/03:00:00
+accepted event:/dev/NTSM
+time zone:GMT-1:00:00DST-2:00:00,M3.5.0/02:00:00,M10.4.0/03:00:00
+time zone:GMT-1:00:00DST-2:00:00,M3.5.0/02:00:00,M10.4.0/03:00:00
+event:RECM connected ok
+accepted event:/dev/RECM
+libStorageFileManager Version[NT98560_HYBRID]:2022-11-23 19:51:28 by yxz
+[func:Sfm_init][line:358][level:02]storage task:Camera Normal; stage:1
+[func:Sfm_set_overlap_record][line:236][level:02]old:0, new:1
+[func:Sfm_set_overlap_timelapse][line:296][level:02]old:0, new:0
+[func:Sfm_umount][line:570][level:02]ret_val:0
+
+
+
+#########################################
+[func:Overlap_thread][line:127][level:20]overlap thread
+event:OVFM connected ok
+rtsp recved survice cfg, waitting for on_configed
+accepted event:/dev/OVFM
+event:FTPM connected ok
+accepted event:/dev/FTPM
+/dev/root on / type squashfs (ro,relatime)
+devtmpfs on /dev type devtmpfs (rw,relatime)
+proc on /proc type proc (rw,relatime)
+sysfs on /sys type sysfs (rw,relatime)
+tmpfs on /tmp type tmpfs (rw,nosuid,nodev,noatime,mode=1777)
+tmpfs on /var/run type tmpfs (rw,nosuid,relatime)
+tmpfs on /mnt/tmp type tmpfs (rw,nosuid,nodev,noatime,mode=1777)
+/dev/ubiblock1_0 on /mnt/app type squashfs (ro,relatime)
+devpts on /dev/pts type devpts (rw,relatime,mode=600,ptmxmode=000)
+/dev/mtdblock6 on /mnt/para type yaffs2 (rw,relatime)
+#########################################
+
+
+[func:Sfm_mount][line:436][level:01]Scan device(0, 0, 0) Failed
+[storage.cpp:375]:init storage m_binit_ok(0) m_bmount_fail(1) ret(1)
+libstreambuffer Version[NT98560_HYBRID]:2022-11-22 20:15:51 by lgb
+time zone:GMT-1:00:00DST-2:00:00,M3.5.0/02:00:00,M10.4.0/03:00:00
+sensor type in dvr.xml:28 2nd_sensor(0).
+fatal error bc_rpc_packet_get /dev/RECM 87 MSG_APP_TZ_DST_NOTIFY 0x1 0, maybe get a free packet
+fatal error bc_rpc_packet_get /dev/RECM 87 MSG_APP_TZ_DST_NOTIFY 0x1 0, maybe get a free packet
+[cloud_main.cpp:955]:device cloud state:0-0-0
+[cloud_main.cpp:960]:
+ query url:
+ bupload:1
+ stream type:2
+ permission:0
+ dev_name:
+ dev_crc:0
+ passwordver:0
+ vaild_time()
+ view_stream:0
+ server_signal:1756226489
+event:UPDM connected ok
+accepted event:/dev/UPDM
+Thread[wq_process] pid[478]
+Thread[wq_process] pid[477]
+support_wifi:0
+libstreambuffer Version[NT98560_HYBRID]:2022-11-22 20:15:51 by lgb
+shmget: No such file or directory
+create_streambuf failed channel 0 type 2
+shmget: No such file or directory
+create_streambuf failed channel 0 type 3
+shmget: No such file or directory
+create_streambuf failed channel 0 type 4
+shmget: No such file or directory
+create_streambuf failed channel 1 type 2
+shmget: No such file or directory
+create_streambuf failed channel 1 type 3
+shmget: No such file or directory
+create_streambuf failed channel 1 type 4
+[update.cpp:47]:version_file load OK! ipc_version:1783_23121201, version_num:1783
+SP block:/dev/mtd7 type:0.
+libstaticparameter Version[NT98560_HYBRID]:2023-01-07 10:28:44 by pyc
+event:DECM connected ok
+accepted event:/dev/DECM
+Sp_init Sp_read_data_from_nand,dev:/dev/mtd7 offset:0 read_len:65536 fd:6
+event:ALAM connected ok
+accepted event:/dev/ALAM
+accepted event:/dev/CGIM
+event:NTCM connected ok
+Sp_init(/dev/mtd7)
+[update_local.cpp:633]:sc_get_update_policy:1.
+[bcs_updateamn_imp.cpp:352]:>>>>>>attr.board_type:IPC_560B218MP_P Model:P330M.
+accepted event:/dev/NTCM
+board type:83
+get zf table failed. ret:2
+ptz creat begin
+ptz creat over
+rpc_set_log level:0x0(0x5e54c) mask:0x0(0x5e548) =>0x7 0x100
+SP block:/dev/mtd7 type:0.
+libstaticparameter Version[NT98560_HYBRID]:2023-01-07 10:28:44 by pyc
+time zone:GMT-1:00:00DST-2:00:00,M3.5.0/02:00:00,M10.4.0/03:00:00
+Thread[wq_process] pid[479]
+Sp_init Sp_read_data_from_nand,dev:/dev/mtd7 offset:0 read_len:65536 fd:6
+[bcs_rcv_update_img.cpp:438]:update policy:1 flash size:0x1b80000 erasesize:0x20000 downlaod parttion info:/dev/mtd9(0x1b80000) Reserved Blocks:8.
+[bcs_rcv_update_img.cpp:368]:current version info:
+[bcs_rcv_update_img.cpp:369]:platform:IPC_560B218MP_P.
+[bcs_rcv_update_img.cpp:370]:main_version:1783_23121201.
+[bcs_rcv_update_img.cpp:371]:files:6.
+[bcs_rcv_update_img.cpp:375]:file:0 name:loader ver:4771 forbid_olup:1 updirect:0.
+[bcs_rcv_update_img.cpp:375]:file:1 name:fdt ver:5061 forbid_olup:1 updirect:0.
+[bcs_rcv_update_img.cpp:375]:file:2 name:uboot ver:5062 forbid_olup:1 updirect:0.
+[bcs_rcv_update_img.cpp:375]:file:3 name:kernel ver:5027 forbid_olup:0 updirect:0.
+[bcs_rcv_update_img.cpp:375]:file:4 name:rootfs ver:5438 forbid_olup:0 updirect:0.
+[bcs_rcv_update_img.cpp:375]:file:5 name:app ver:v3.0.0.1783_23121201 forbid_olup:0 updirect:0.
+[bcs_rcv_update_img.cpp:476]:bcs_rcv_img_init succ.
+[bcs_updateamn_imp.cpp:373]:attr.board_type:IPC_560B218MP_P m_cli_cancled=0.
+Part:0 Name:                          loader Dev:                       /dev/mtd0 Start:0x00000000/0x00000000 Size:0x00040000
+Part:1 Name:                             fdt Dev:                       /dev/mtd1 Start:0x00040000/0x00040000 Size:0x00040000
+Part:2 Name:                           uboot Dev:                       /dev/mtd2 Start:0x00080000/0x00080000 Size:0x00100000
+Part:3 Name:                          kernel Dev:                       /dev/mtd3 Start:0x00180000/0x00180000 Size:0x00400000
+Part:4 Name:                          rootfs Dev:                       /dev/mtd4 Start:0x00580000/0x00580000 Size:0x00f00000
+Part:5 Name:                             app Dev:                       /dev/mtd5 Start:0x01480000/0x01480000 Size:0x00b00000
+Part:6 Name:                            para Dev:                       /dev/mtd6 Start:0x01f80000/0x01f80000 Size:0x00400000
+Part:7 Name:                              sp Dev:                       /dev/mtd7 Start:0x02380000/0x02380000 Size:0x00080000
+Part:8 Name:                        ext_para Dev:                       /dev/mtd8 Start:0x02400000/0x02400000 Size:0x00080000
+Part:9 Name:                                 Dev:                                 Start:0x00000000/0x00000000 Size:0x00000000
+Part:10 Name:                                 Dev:                                 Start:0x00000000/0x00000000 Size:0x00000000
+[bcs_rcv_update_img.cpp:368]:current version info:
+[bcs_rcv_update_img.cpp:369]:platform:IPC_560B218MP_P.
+[bcs_rcv_update_img.cpp:370]:main_version:1783_23121201.
+[bcs_rcv_update_img.cpp:371]:files:6.
+[bcs_rcv_update_img.cpp:375]:file:0 name:loader ver:4771 forbid_olup:1 updirect:0.
+[bcs_rcv_update_img.cpp:375]:file:1 name:fdt ver:5061 forbid_olup:1 updirect:0.
+[bcs_rcv_update_img.cpp:375]:file:2 name:uboot ver:5062 forbid_olup:1 updirect:0.
+[bcs_rcv_update_img.cpp:375]:file:3 name:kernel ver:5027 forbid_olup:0 updirect:0.
+[bcs_rcv_update_img.cpp:375]:file:4 name:rootfs ver:5438 forbid_olup:0 updirect:0.
+[bcs_rcv_update_img.cpp:375]:file:5 name:app ver:v3.0.0.1783_23121201 forbid_olup:0 updirect:0.
+attr.support_onlineupgrade========1.
+[bcs_updateamn_imp.cpp:504]:c_bcsupdate_imp init succ.
+[update.cpp:47]:version_file load OK! ipc_version:1783_23121201, version_num:1783
+Sp_init(/dev/mtd7)
+ext_para block:/dev/mtd8 type:0.
+libstaticparameter Version[NT98560_HYBRID]:2023-01-07 10:28:44 by pyc
+time zone:GMT-1:00:00DST-2:00:00,M3.5.0/02:00:00,M10.4.0/03:00:00
+Thread[wq_process] pid[480]
+fatal error bc_rpc_packet_get /dev/CGIM 163 MSG_APP_TZ_DST_NOTIFY 0x1 0, maybe get a free packet
+Thread[wq_process] pid[483]
+Thread[wq_process] pid[482]
+Thread[wq_process] pid[481]
+sensor type in dvr.xml:28 2nd_sensor(0).
+support_wifi:0
+time zone:GMT-1:00:00DST-2:00:00,M3.5.0/02:00:00,M10.4.0/03:00:00
+SP block:/dev/mtd7 type:0.
+libstaticparameter Version[NT98560_HYBRID]:2023-01-07 10:28:44 by pyc
+_ep_init read_data_from_nand,dev:/dev/mtd8 offset:0 read_len:65536 fd:8
+time zone:GMT-1:00:00DST-2:00:00,M3.5.0/02:00:00,M10.4.0/03:00:00
+Thread[wq_process] pid[489]
+Thread[wq_process] pid[490]
+Thread[wq_process] pid[491]
+sensor type in dvr.xml:28 2nd_sensor(0).
+support_wifi:0
+Sp_init Sp_read_data_from_nand,dev:/dev/mtd7 offset:0 read_len:65536 fd:6
+Sp_init(/dev/mtd7)
+onvif uuid:15051103-0000-0000-0401
+================watchdog: watchdog0: watchdog did not stop!
+===============create_streambuf()======================================
+libstreambuffer Version[NT98560_HYBRID]:2022-11-22 20:15:51 by lgb
+[OnvifServerAPI.c:938]:new onvif_tcp_process id(2)
+shmget: No such file or directory
+shmget: No such file or directory
+shmget: No such file or directory
+[OnvifServerAPI.c:938]:new onvif_tcp_process id(1)
+route run now, the management of the watchdog will be transferred to the route from watchdog_monitor_start.
+watchdog_monitor_start Exit(30), time_out(82)!!!
+time zone:GMT-1:00:00DST-2:00:00,M3.5.0/02:00:00,M10.4.0/03:00:00
+[OnvifServerAPI.c:938]:new onvif_tcp_process id(0)
+Thread[wq_process] pid[496]
+time zone:GMT-1:00:00DST-2:00:00,M3.5.0/02:00:00,M10.4.0/03:00:00
+Thread[wq_process] pid[497]
+mod:OVFM bc_kv_set_stat :3 ok
+mod:NTCM bc_kv_set_stat :3 ok
+mod:UPDM bc_kv_set_stat :3 ok
+[cmd]ifconfig eth0 down [ret]:0
+[cmd]ifconfig eth0 hw ether XX:XX:XX:XX:XX:XX [ret]:0
+phydev exist: resume phy
+nvt_resume: find node
+nvt_resume: led-inv = 0
+nvt_resume: pinmux 0x0
+DWC_ETH_QOS_yinit: apb_clk 120000000 Hz
+Queue0 Tx fifo size 2048, Rx fifo size 2048
+Disabled JUMBO pkt
+Enabled Rx watchdog timer
+Enabled TSO
+Disabled Rx Split header mode
+phydev exist: start phy
+nvt_resume: find node
+nvt_resume: led-inv = 0
+nvt_resume: pinmux 0x0
+[cmd]ifconfig eth0 up [ret]:0
+[cmd]route add default dev eth0 [ret]:0
+Thread[wq_process] pid[502]
+anti_flick:3
+anti_flick:3
+[enc.cpp:3831]:on_isp_base_notify, x:0, y:0
+[enc.cpp:3831]:on_isp_base_notify, x:0, y:0
+libmedia Version[NT98560_HYBRID]:2023-02-16 14:04:07 by /home/ttc/ipcv25_version/20230216/ipc_20221122_V25/media/include/libmediaVersion.h
+[Nvt52xAdapter.cpp:1084]:CHN 0 sc_get_ipc_sensor 26 mainreso 34
+[Nvt52xAdapter.cpp:1084]:CHN 1 sc_get_ipc_sensor 28 mainreso 51
+hd_common_init v0.2000.0
+
+process id 0 _isf_init 0
+AI: BASE
+##AI addr 16ab7000
+ai - proc[0].trace = 00000000
+[cmd]rm -rf /mnt/tmp/wdt_flag [ret]:0
+killall: watchdog_monitor_start: no process killed
+[cmd]killall -9 watchdog_monitor_start [ret]:256
+mod:FTPM bc_kv_set_stat :3 ok
+mod:ALAM bc_kv_set_stat :3 ok
+[func:Sfm_set_overlap_record][line:236][level:02]old:1, new:1
+[func:Sfm_set_overlap_record_policy][line:287][level:02]policy:0, retention duration:0
+mod:CLOUDM bc_kv_set_stat :3 ok
+[func:Sfm_set_overlap_timelapse][line:296][level:02]old:0, new:0
+mod:RECM bc_kv_set_stat :3 ok
+alloc_io_buf: work buf, pa = 0x18c11000, va = 0x6e299000, size = 2027520
+AI init ok
+mod:FACM bc_kv_set_stat :3 ok
+rtsp recved enc cfg, waitting for on_configed
+rtsp recved enc cfg, waitting for on_configed
+rtsp on_configed, rtsp init now!
+libstreambuffer Version[NT98560_HYBRID]:2022-11-22 20:15:51 by lgb
+chn:0 stream:0 support h265 1 create ok
+chn:0 stream:1 support h265 0 create ok
+shmget: No such file or directory
+LINE 708 chn:0 stream:2 create failed
+shmget: No such file or directory
+LINE 708 chn:0 stream:3 create failed
+shmget: No such file or directory
+LINE 708 chn:0 stream:4 create failed
+chn:1 stream:0 support h265 0 create ok
+chn:1 stream:1 support h265 0 create ok
+shmget: No such file or directory
+LINE 708 chn:1 stream:2 create failed
+shmget: No such file or directory
+LINE 708 chn:1 stream:3 create failed
+shmget: No such file or directory
+LINE 708 chn:1 stream:4 create failed
+liblive555 Version[NT98513]:2019-09-02 12:12:11 by lxpeng
+mod:RTPM bc_kv_set_stat :3 ok
+RealTimeAudioServerMediaSubsession::createNew:0, 0
+
+"" stream, from the file ""
+Play this stream using the URL "rtsp://192.168.0.3/"
+main stream encodered by h265
+RealTimeAudioServerMediaSubsession::createNew:0, 0
+
+"h265Preview_01_main" stream, from the file "h265Preview_01_main"
+Play this stream using the URL "rtsp://192.168.0.3/h265Preview_01_main"
+main stream encodered by h265
+RealTimeAudioServerMediaSubsession::createNew:0, 0
+
+"Preview_01_main" stream, from the file "Preview_01_main"
+Play this stream using the URL "rtsp://192.168.0.3/Preview_01_main"
+mvenc init: config tile cut if w>2048 (LL fast)
+ain stream encodered by h265
+RealTimeAudioServerMediaSubsessioncsi_platform_clk_enable....
+::createNew:0, 0
+
+"h264Preview_01_main" stream, from the file "h264Preview_01_main"
+Play this stream using the URL "rtsp://192.168.0.3/h264Preview_01_main"
+RealTimeAudioServerMediaSubsession::createNew:0, 1
+
+"h264Preview_01_sub" stream, from the file "h264Preview_01_sub"
+Play this stream using the URL "rtsp://192.168.0.3/h264Preview_01_sub"
+RealTimeAudioServerMediaSubsession::createNew:0, 1
+
+"Preview_01_sub" stream, from the file "Preview_01_sub"
+Play this stream using the URL "rtsp://192.168.0.3/Preview_01_sub"
+RealTimeAudioServerMediaSubsession::createNew:1, 0
+
+"Preview_01_autotrack" stream, from the file "Preview_01_autotrack"
+Play this stream using the URL "rtsp://192.168.0.3/Preview_01_autotrack"
+main stream encodered by h264
+RealTimeAudioServerMediaSubsession::createNew:1, 0
+
+"h264Preview_02_main" stream, from the file "h264Preview_02_main"
+Play this stream using the URL "rtsp://192.168.0.3/h264Preview_02_main"
+main stream encodered by h264
+RealTimeAudioServerMediaSubsession::createNew:1, 0
+
+"Preview_02_main" stream, from the file "Preview_02_main"
+Play this stream using the URL "rtsp://192.168.0.3/Preview_02_main"
+main stream encodered by h264
+RealTimeAudioServerMediaSubsession::createNew:1, 0
+
+"h265Preview_02_main" stream, from the file "h265Preview_02_main"
+Play this stream using the URL "rtsp://192.168.0.3/h265Preview_02_main"
+RealTimeAudioServerMediaSubsession::createNew:1, 1
+
+"h264Preview_02_sub" stream, from the file "h264Preview_02_sub"
+Play this stream using the URL "rtsp://192.168.0.3/h264Preview_02_sub"
+RealTimeAudioServerMediaSubsession::createNew:1, 1
+
+"Preview_02_sub" stream, from the file "Preview_02_sub"
+Play this stream using the URL "rtsp://192.168.0.3/Preview_02_sub"
+
+(We use port 6001 for optional RTSP-over-HTTP tunneling.)
+[Nvt52xAdapter_ai.cpp:969]:not support ai type:1
+[Nvt52xAdapter_ai.cpp:969]:not support ai type:1
+mod:PUSM bc_kv_set_stat :3 ok
+get zf table failed.
+libstreambuffer Version[NT98560_HYBRID]:2022-11-22 20:15:51 by lgb
+func(enc_start_no_osd) chn(0) move_up(0) crop_h(0)
+xzq:channel:0 enType:0
+[Nvt52xAdapter_avenc.cpp:1076]:Na_video_encoder_start(1 Main) START(res:3840 * 2160, frame rate:20, bit rate:8192, gop:40)
+[Nvt52xAdapter.cpp:1694]:Channel:1 offset:0/0 move:0/0 CAPTURE crop on(0, 0, 3840, 2160)
+#####audio start time 14823vdoprc1 CNN on => stripe LV1, force to LV2!
+
+vdoprc1 init: stripe LV2 = cut w>2048, GDC = off, 2D_LUT off after cut (LL fast)
+Na_video_encoder_start(Main) get max_bitrate(8388608)data_mode= 3
+
+data_mode= 3
+data_mode= 3
+csi_platform_clk_disable....
+csi_platform_clk_enable....
+data_mode= 3
+DWC_ETH_QOS_adjust_link: start tx/rx
+DWC_ETH_QOS f02b0000.eth eth0: Link is Up - 100Mbps/Full - flow control rx/tx
+ERR:ctl_sie_set_trig() id 1 SIE clk 320000000 < sensor require min 378000000
+[Nvt52xAdapter_avenc.cpp:3443]:time: 1763653624 pts_off 56824000000
+mod:NTSM bc_kv_set_stat :3 ok
+xzq:channel:0 enType:1
+[Nvt52xAdapter_avenc.cpp:1076]:Na_video_encoder_start(1 Sub) START(res:896 * 512, frame rate:20, bit rate:1024, gop:80)
+Na_video_encoder_start(Sub) get max_bitrate(1257472)
+csi_platform_clk_enable....
+[enc.cpp:830]:start enc without osd fail !
+[ecsi_open:CSI HW reset!
+nc.cpp:830]:start enc without osd fail !
+[enc.cpp:83========== AE_CBMSG_PREVIEWSTABLE ==========
+0]:start enc without osd fail !
+func(enc_start_no_osd) chn(1) move_up(0) crop_h(0)
+xzq:channel:1 enType:0
+[Nvt52xAdapter_avenc.cpp:1076]:Na_video_encoder_start(0 Main) START(res:2304 * 1296, frame rate:15, bit rate:4096, gop:30)
+[Nvt52xAdapter.cpp:1694]:Channel:0 offset:0/0 move:0/vdoprc0 CNN on => stripe LV1, force to LV2!
+0 CAPTURE crop on(0, 0, 2304, 1296)
+#####audio start time 15212vdoprc0 init: stripe LV2 = cut w>2048, GDC = off, 2D_LUT off after cut (LL fast)
+
+Na_video_encoder_start(Main) get max_bitrate(8388608)ERR:sen_get_modesel_os03b10() MODE = 0
+
+ERR:sen_get_modesel_os03b10() MODE = 0
+ERR:sen_get_modesel_os03b10() MODE = 0
+ERR:sen_get_modesel_os03b10() MODE = 0
+xzq:channel:1 enType:1
+[Nvt52xAdapter_avenc.cpp:1076]:Na_video_encoder_start(0 Sub) START(res:896 * 512, frame rate:15, bit rate:1024, gop:60)
+Na_video_encoder_start(Sub) get max_bitrate(2097152)
+[enc.cpp:830]:start enc without osd fail !
+[enc.cpp:830]:start enc without osd fail !
+[enc.cpp:830]:start enc without osd fail !
+[alarmcenter.cpp:741]:[ALARM_DEBUG]p->m_run:1
+========== AE_CBMSG_PREVIEWSTABLE ==========
+notice! add 1 tasks while try to end
+[alarmcenter.cpp:741]:[ALARM_DEBUG]p->m_run:1
+shmget: No such file or directory
+shmget: No such file or directory
+get zf table failed.
+!!!!!!!!!!Sp_get_zoomfocustable ret=3 size=1024.
+Not support.
+Not support.
+Not support.
+[bc_ptz.cpp:6603]:p_max_step:0, t_max_step:0
+on_ptz_stat_modify!!!!!!!!!, 0
+[Nvt52xAdapter_isp.cpp:1735]:channel:1,  have bad exposure boud:-1~-1.
+[Nvt52xAdapter_isp.cpp:1735]:channel:0,  have bad exposure boud:-1~-1.
+[Nvt52xAdapter_isp.cpp:1777]:Channel:1 default gain is -1, skip to set.
+[Nvt52xAdapter_isp.cpp:1777]:Channel:0 default gain is -1, skip to set.
+[alarmcenter.cpp:719]:on_ptz_stat_notify, stat:0--->0.
+[save_restart_info][flash_write_count]:(1).
+route: SIOCADDRT: File exists
+[cmd]route add default dev eth0 [ret]:256
+[cmd]echo > /etc/resolv.conf [ret]:0
+[isp.cpp:3580]:use hardware cds policy:0
+[isp.cpp:3580]:use hardware cds policy:0
+[cmd]udhcpc -i eth0 -x hostname:'DvojOcka' -p /var/run/udhcpc.pid -r 172.16.25.137 & [ret]:0
+[cmd]./ip_client eth0 & [ret]:0
+udhcpc: started, v1.31.1
+[network.cpp:4046]:wan stat:0 ip: eth: mac: TO wan stat:1 ip:192.168.0.3 eth:eth0 mac:XX:XX:XX:XX:XX:XX...Broadcast!
+interface changed, from  to eth0
+MAC changed, from  to XX:XX:XX:XX:XX:XX
+IP changed, from  to 192.168.0.3
+link type changed, from 0 to 1
+wl_max_delay_time:180
+wl_cur_brightness:85
+wl_max_delay_time:180
+wl_cur_brightness:85
+get zf table failed.
+[isp.cpp:5542]:do_stitch_ecs_init fail!!
+get zf table failed.
+[isp.cpp:5542]:do_stitch_ecs_init fail!!
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:756]:mirror: ENABLE
+[Nvt52xAdapter_isp.cpp:757]:flip: ENABLE
+[isp.cpp:208]:unknow cbw mode 4
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:756]:mirror: DISABLE
+[Nvt52xAdapter_isp.cpp:757]:flip: DISABLE
+[isp.cpp:208]:unknow cbw mode 4
+[isp.cpp:5582]:s_bright_sync = 0,bright_sync_switch = 0
+set_ae_stitch_mode the same
+[isp.cpp:5582]:s_bright_sync = 1,bright_sync_switch = 0
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:756]:mirror: ENABLE
+[Nvt52xAdapter_isp.cpp:757]:flip: ENABLE
+[isp.cpp:208]:unknow cbw mode 4
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:756]:mirror: DISABLE
+[Nvt52xAdapter_isp.cpp:757]:flip: DISABLE
+[isp.cpp:208]:unknow cbw mode 4
+deconfig...
+Led_light_switcher_thread start(1600, 900)
+/home/xd/workspace/lib/libhal/20221119_r3591/src/misc.c:3576 adc_channel = 1
+sar_adc_open open chn:0 succ:18
+sar_adc_open open chn:1 succ:19
+sar_adc_open open chn:2 succ:20
+udhcpc: sending discover
+[alarmcenter.cpp:555]:on_cbw_stat_notify, stat:0 --->1, mode=0, tick=[14115].
+[alarmcenter.cpp:555]:on_cbw_stat_notify, stat:1 --->1, mode=0, tick=[14118].
+udhcpc: sending select for 192.168.1.152
+udhcpc: lease of 192.168.1WRN:isp_dev_get_sync_item() sync info not match (0, 24, 0, 23, 2)
+.152 obtained, lease time 43200
+Setting IP address 192.168.1.15WRN:isp_dev_get_sync_item() sync info not match (0, 24, 0, 23, 2)
+2 on eth0
+WRN:isp_dev_get_sync_item() sync info not match (0, 24, 0, 23, 2)
+WRN:isp_dev_get_sync_item() sync info not match (0, 24, 0, 23, 2)
+WRN:isp_dev_get_sync_item() sync info not match (0, 25, 0, 0, 2)
+WRN:isp_dev_get_sync_item() sync info not match (0, 25, 0, 0, 2)
+WRN:isp_dev_get_sync_item() sync info not match (0, 25, 0, 0, 2)
+WRN:isp_dev_get_sync_item() sync info not match (0, 25, 0, 0, 2)
+WRN:isp_dev_get_sync_item() sync info not match (0, 25, 0, 0, 2)
+onvif_tcp_select_start begin
+onvif_wait_probe_start begin
+onvif_wait_probe_start begin
+[cmd]cp /usr/sbin/ddns /mnt/tmp/ -rf [ret]:0
+set gpio:34 dir out:in
+[alarmcenter.cpp:555]:on_cbw_stat_notify, stat:1 --->1, mode=0, tick=[14392].
+.
+set gpio:35 dir out:in
+.
+Deleting routers
+WRN:isp_dev_get_sync_item() sync info not match (0, 26, 1, 1, 2)
+WRN:isp_dev_get_sync_item() sync info not match (0, 26, 1, 1, 2)
+WRN:isp_dev_get_sync_item() sync info not match (0, 26, 1, 1, 2)
+WRN:isp_dev_get_sync_item() sync info not match (0, 26, 1, 1, 2)
+WRN:isp_dev_get_sync_item() sync info not match (0, 26, 1, 1, 2)
+WRN:isp_dev_get_sync_item() sync info not match (0, 27, 2, 2, 2)
+WRN:isp_dev_get_sync_item() sync info not match (0, 27, 2, 2, 2)
+WRN:isp_dev_get_sync_item() sync info not match (0, 27, 2, 2, 2)
+WRN:isp_dev_get_sync_item() sync info not match (0, 27, 2, 2, 2)
+WRN:isp_dev_get_sync_item() sync info not match (0, 27, 2, 2, 2)
+[alarmcenter.cpp:555]:on_cbw_stat_notify, stat:1 --->1, mode=0, tick=[14522].
+WRN:isp_dev_get_sync_item() sync info not match (0, 28, 3, 3, 2)
+route: SIOCDELRT: No such process
+Adding router 192.168.1.1
+[alarmcenter.cpp:555]:on_cbw_stat_notify, stat:1 --->1, mode=0, tick=[14588].
+Recreating /etc/resolv.conf
+ Adding DNS server 192.168.1.1
+[alarmcenter.cpp:555]:on_cbw_stat_notify, stat:1 --->1, mode=0, tick=[14650].
+[alarmcenter.cpp:555]:on_cbw_stat_notify, stat:1 --->1, mode=0, tick=[14723].
+mod:DECM bc_kv_set_stat :3 ok
+[alarmcenter.cpp:555]:on_cbw_stat_notify, stat:1 --->1, mode=0, tick=[14773].
+reload_image_cfg load isp IQ cfg channel: 1 sensor:28 daynightmode:0
+load isp IQ cfg name: /usr/isp520_sc830ai_day.cfg
+ERR:vos_file_open() open [/mnt/app/isp/isp520_sc830ai_day-01_dpc.bin] failed, ret -2
+ERR:vos_file_open() open [/mnt/app/isp/isp520_sc830ai_day-01_ecs.bin] failed, ret -2
+ERR:vos_file_open() open [/mnt/app/isp/isp520_sc830ai_day-01_ecs_auto_0.bin] failed, ret -2
+ERR:vos_file_open() open [/mnt/app/isp/isp520_sc830ai_day-01_ecs_auto_1.bin] failed, ret -2
+ERR:vos_file_open() open [/mnt/app/isp/isp520_sc830ai_day-01_ecs_auto_2.bin] failed, ret -2
+ERR:vos_file_open() open [/mnt/app/isp/isp520_sc830ai_day-01_lut2d.bin] failed, ret -2
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59200
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59E00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59100
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:630]:set_drc_strengh, channel: 1, value:-1, mode:0
+[Nvt52xAdapter_isp.cpp:802]:ae_set_target_y,value:128
+[Nvt52xAdapter_isp.cpp:1425]:ae_set_auto_lowlight, channel: 1, value:1
+
+
+ mode:0,AE:1 - 333; GAIN:1 - 256
+reload_image_cfg load isp IQ cfg channel: 0 sensor:26 daynightmode:0
+load isp IQ cfg name: /usr/isp520_os03b10_day.cfg
+nets version detect, client ip:192.168.1.241 ver:2
+nets new encrypt version detect, client ip:192.168.1.241 ver:1
+onvif uuidAddr:urn:uuid:15051103-0000-0000-0401-ec71db556dac
+statistics_reset int
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+nets version detect, client ip:192.168.1.241 ver:2
+nets new encrypt version detect, client ip:192.168.1.241 ver:1
+[OnvifServerAPI.c:513]:onvif_send_hello _IPAddr:http://192.168.0.3:8000/onvif/device_service
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59B00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59C00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59100
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+soap_send___wsdd__Hello okERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59800
+
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59F00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59200
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59900
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59400
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59B00
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:630]:set_drc_strengh, channel: 0, value:-1, mode:0
+[Nvt52xAdapter_isp.cpp:802]:ae_set_target_y,value:128
+[Nvt52xAdapter_isp.cpp:1425]:ae_set_auto_lowlight, channel: 0, value:1
+
+
+ mode:0,AE:1 - 333; GAIN:1 - 128
+nginx restart now!
+[alarmcenter.cpp:173]:alarmout :alarmout_ftp_video had been registered
+[alarmcenter.cpp:173]:alarmout :alarmout_ftp_pic had been registered
+[alarmcenter.cpp:173]:alarmout :alarmout_email had been registered
+[alarmcenter.cpp:173]:alarmout :alarmout_push had been registered
+[alarmcenter.cpp:173]:alarmout :alarmout_cloud had been registered
+[alarmcenter.cpp:173]:alarmout :alarmout_base had been registered
+[alarmcenter.cpp:173]:alarmout :alarmout_IoT had been registered
+CAiResultCache::Get, Fatal2(7, 12)
+CAiResultCache::Get, Fatal2(7, 12)
+CAiResultCache::Get, Fatal2(7, 12)
+CAiResultCache::Get, Fatal2(7, 12)
+CAiResultCache::Get, Fatal2(7, 12)
+CAiResultCache::Get, Fatal2(7, 12)
+cur pts:56841632928
+cur pts:56841632928
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+[network.cpp:4046]:wan stat:1 ip:192.168.0.3 eth:eth0 mac:XX:XX:XX:XX:XX:XX TO wan stat:1 ip:192.168.1.152 eth:eth0 mac:XX:XX:XX:XX:XX:XX...Broadcast!
+IP changed, from 192.168.0.3 to 192.168.1.152
+statistics_reset int
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+[isp.cpp:1487]:Chn:0 reset the advanced cfg
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:630]:set_drc_strengh, channel: 1, value:-1, mode:0
+[Nvt52xAdapter_isp.cpp:802]:ae_set_target_y,value:128
+[Nvt52xAdapter_isp.cpp:1425]:ae_set_auto_lowlight, channel: 1, value:1
+
+
+ mode:0,AE:1 - 333; GAIN:1 - 256
+[isp.cpp:267]:====>ecs :1
+[isp.cpp:1487]:Chn:1 reset the advanced cfg
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:630]:set_drc_strengh, channel: 0, value:-1, mode:0
+[Nvt52xAdapter_isp.cpp:802]:ae_set_target_y,value:128
+[Nvt52xAdapter_isp.cpp:1425]:ae_set_auto_lowlight, channel: 0, value:1
+
+
+ mode:0,AE:1 - 333; GAIN:1 - 128
+[isp.cpp:267]:====>ecs :1
+random: crng init done
+[isp.cpp:1487]:Chn:0 reset the advanced cfg
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:630]:set_drc_strengh, channel: 1, value:-1, mode:0
+[Nvt52xAdapter_isp.cpp:802]:ae_set_target_y,value:128
+[Nvt52xAdapter_isp.cpp:1425]:ae_set_auto_lowlight, channel: 1, value:1
+
+
+ mode:0,AE:1 - 333; GAIN:1 - 256
+[isp.cpp:267]:====>ecs :1
+[isp.cpp:1487]:Chn:1 reset the advanced cfg
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:630]:set_drc_strengh, channel: 0, value:-1, mode:0
+[Nvt52xAdapter_isp.cpp:802]:ae_set_target_y,value:128
+[Nvt52xAdapter_isp.cpp:1425]:ae_set_auto_lowlight, channel: 0, value:1
+
+
+ mode:0,AE:1 - 333; GAIN:1 - 128
+[isp.cpp:267]:====>ecs :1
+onvif uuidAddr:urn:uuid:15051103-0000-0000-0401-ec71db556dac
+[OnvifServerAPI.c:513]:onvif_send_hello _IPAddr:http://192.168.1.152:8000/onvif/device_service
+soap_send___wsdd__Hello ok
+WRN:md_platform_set_clk_rate() MDBC: Input frequency 240 round to 240
+[Nvt52xAdapter_avenc.cpp:3223]:Na_thread_avencoder_fps start
+upnp devices list:
+   desc: http://192.168.1.159:8008/ssdp/device-desc.xml
+   st: upnp:rootdevice
+upnp find one, is a gateway?:
+   http://192.168.1.159:8008/
+upnp trying to continue anyway
+[alarmcenter.cpp:555]:on_cbw_stat_notify, stat:1 --->0, mode=0, tick=[22210].
+[alarmcenter.cpp:555]:on_cbw_stat_notify, stat:0 --->0, mode=0, tick=[22368].
+fatal error bc_rpc_packet_get DECM 221 MSG_SERVICE_NTPTIME_SYNC 0x1 0, maybe get a free packet
+autoc >> create socket ok, s=18
+autos >> set_filter succ.
+
+autoc >> auto config client start, max_ip_check_times=0
+
+(none) login: nets version detect, client ip:192.168.1.241 ver:2
+nets new encrypt version detect, client ip:192.168.1.241 ver:1
+statistics_reset int
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+nets version detect, client ip:192.168.1.241 ver:2
+nets new encrypt version detect, client ip:192.168.1.241 ver:1
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+cur pts:56856282917
+cur pts:56856282917
+statistics_reset int
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+AddPortMapping(9000, 9000, 192.168.1.152) failed with code -3 (UnknownError)
+exe (453): drop_caches: 3
+              total        used        free      shared  buff/cache   available
+Mem:         254372       38456      168556           0       47360      180096
+Swap:             0           0           0
+GetSpecificPortMappingEntry() failed with code -3 (UnknownError)
+upnp [:9000 TCP is redirected to p▒▒v▒▒:▒▒▒v▒ (duration=▒▒▒v)
+[alarmcenter.cpp:555]:on_cbw_stat_notify, stat:0 --->1, mode=2, tick=[37721].
+[alarmcenter.cpp:756]:on_white_light_stat_notify, stat:0 --->1.
+[alarmcenter.cpp:555]:on_cbw_stat_notify, stat:1 --->1, mode=2, tick=[37725].
+[alarmcenter.cpp:756]:on_white_light_stat_notify, stat:1 --->1.
+reload_image_cfg load isp IQ cfg channel: 1 sensor:28 daynightmode:2
+load isp IQ cfg name: /usr/isp520_sc830ai_led_day.cfg
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59F00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59C00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59900
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59100
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59800
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59E00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59200
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59400
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59F00
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:630]:set_drc_strengh, channel: 1, value:-1, mode:0
+[Nvt52xAdapter_isp.cpp:802]:ae_set_target_y,value:128
+[Nvt52xAdapter_isp.cpp:1425]:ae_set_auto_lowlight, channel: 1, value:1
+
+
+ mode:2,AE:1 - 833; GAIN:1 - 256
+reload_image_cfg load isp IQ cfg channel: 0 sensor:26 daynightmode:2
+load isp IQ cfg name: /usr/isp520_os03b10_led_day.cfg
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59F00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59C00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59900
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59100
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59800
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59E00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59400
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59200
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8AF59B00
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:630]:set_drc_strengh, channel: 0, value:-1, mode:0
+[Nvt52xAdapter_isp.cpp:802]:ae_set_target_y,value:128
+[Nvt52xAdapter_isp.cpp:1425]:ae_set_auto_lowlight, channel: 0, value:1
+
+
+ mode:2,AE:1 - 833; GAIN:1 - 128
+[alarmcenter.cpp:438]:MD alarm in trigger chn:0, MD state:1, tick=[39246].
+on_md_alarm_handle, chn:0, change md to 1
+on_md_alarm_handle, chn:1, change md to 1
+[alarmcenter.cpp:438]:MD alarm in trigger chn:1, MD state:1, tick=[39250].
+[alarmout_push.cpp:70]:-------->>alarm push[0] START, event:(chn, device)=(0x1, 0x0), tick=[39]s.
+[alarmcenter.cpp:555]:on_cbw_stat_notify, stat:1 --->1, mode=0, tick=[39310].
+[alarmcenter.cpp:756]:on_white_light_stat_notify, stat:1 --->1.
+[alarmcenter.cpp:555]:on_cbw_stat_notify, stat:1 --->1, mode=0, tick=[39310].
+[alarmcenter.cpp:756]:on_white_light_stat_notify, stat:1 --->1.
+reload_image_cfg load isp IQ cfg channel: 1 sensor:28 daynightmode:0
+load isp IQ cfg name: /usr/isp520_sc830ai_day.cfg
+ERR:vos_file_open() open [/mnt/app/isp/isp520_sc830ai_day-01_dpc.bin] failed, ret -2
+ERR:vos_file_open() open [/mnt/app/isp/isp520_sc830ai_day-01_ecs.bin] failed, ret -2
+ERR:vos_file_open() open [/mnt/app/isp/isp520_sc830ai_day-01_ecs_auto_0.bin] failed, ret -2
+ERR:vos_file_open() open [/mnt/app/isp/isp520_sc830ai_day-01_ecs_auto_1.bin] failed, ret -2
+ERR:vos_file_open() open [/mnt/app/isp/isp520_sc830ai_day-01_ecs_auto_2.bin] failed, ret -2
+ERR:vos_file_open() open [/mnt/app/isp/isp520_sc830ai_day-01_lut2d.bin] failed, ret -2
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3EFF00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E371800
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E371300
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:630]:set_drc_strengh, channel: 1, value:-1, mode:0
+[Nvt52xAdapter_isp.cpp:802]:ae_set_target_y,value:128
+[Nvt52xAdapter_isp.cpp:1425]:ae_set_auto_lowlight, channel: 1, value:1
+
+
+ mode:0,AE:1 - 333; GAIN:1 - 256
+reload_image_cfg load isp IQ cfg channel: 0 sensor:26 daynightmode:0
+load isp IQ cfg name: /usr/isp520_os03b10_day.cfg
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E371800
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E371B00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E371200
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E371E00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E371A00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E371900
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E371300
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8F121400
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8F121C00
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:630]:set_drc_strengh, channel: 0, value:-1, mode:0
+[Nvt52xAdapter_isp.cpp:802]:ae_set_target_y,value:128
+[Nvt52xAdapter_isp.cpp:1425]:ae_set_auto_lowlight, channel: 0, value:1
+
+
+ mode:0,AE:1 - 333; GAIN:1 - 128
+CAiResultCache::Get, Fatal2(156, 162)
+CAiResultCache::Get, Fatal2(156, 162)
+CAiResultCache::Get, Fatal2(156, 162)
+CAiResultCache::Get, Fatal2(156, 162)
+CAiResultCache::Get, Fatal2(156, 162)
+CAiResultCache::Get, Fatal2(156, 162)
+[isp.cpp:1487]:Chn:0 reset the advanced cfg
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:630]:set_drc_strengh, channel: 1, value:-1, mode:0
+[Nvt52xAdapter_isp.cpp:802]:ae_set_target_y,value:128
+[Nvt52xAdapter_isp.cpp:1425]:ae_set_auto_lowlight, channel: 1, value:1
+
+
+ mode:0,AE:1 - 333; GAIN:1 - 256
+[isp.cpp:267]:====>ecs :1
+[isp.cpp:1487]:Chn:1 reset the advanced cfg
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:630]:set_drc_strengh, channel: 0, value:-1, mode:0
+[Nvt52xAdapter_isp.cpp:802]:ae_set_target_y,value:128
+[Nvt52xAdapter_isp.cpp:1425]:ae_set_auto_lowlight, channel: 0, value:1
+
+
+ mode:0,AE:1 - 333; GAIN:1 - 128
+[isp.cpp:267]:====>ecs :1
+[isp.cpp:1487]:Chn:0 reset the advanced cfg
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:630]:set_drc_strengh, channel: 1, value:-1, mode:0
+[Nvt52xAdapter_isp.cpp:802]:ae_set_target_y,value:128
+[Nvt52xAdapter_isp.cpp:1425]:ae_set_auto_lowlight, channel: 1, value:1
+
+
+ mode:0,AE:1 - 333; GAIN:1 - 256
+[isp.cpp:267]:====>ecs :1
+[isp.cpp:1487]:Chn:1 reset the advanced cfg
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:630]:set_drc_strengh, channel: 0, value:-1, mode:0
+[Nvt52xAdapter_isp.cpp:802]:ae_set_target_y,value:128
+[Nvt52xAdapter_isp.cpp:1425]:ae_set_auto_lowlight, channel: 0, value:1
+
+
+ mode:0,AE:1 - 333; GAIN:1 - 128
+[isp.cpp:267]:====>ecs :1
+[isp.cpp:1487]:Chn:0 reset the advanced cfg
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:630]:set_drc_strengh, channel: 1, value:-1, mode:0
+[Nvt52xAdapter_isp.cpp:802]:ae_set_target_y,value:128
+[Nvt52xAdapter_isp.cpp:1425]:ae_set_auto_lowlight, channel: 1, value:1
+
+
+ mode:0,AE:1 - 333; GAIN:1 - 256
+[isp.cpp:267]:====>ecs :1
+[isp.cpp:1487]:Chn:1 reset the advanced cfg
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:630]:set_drc_strengh, channel: 0, value:-1, mode:0
+[Nvt52xAdapter_isp.cpp:802]:ae_set_target_y,value:128
+[Nvt52xAdapter_isp.cpp:1425]:ae_set_auto_lowlight, channel: 0, value:1
+
+
+ mode:0,AE:1 - 333; GAIN:1 - 128
+[isp.cpp:267]:====>ecs :1
+[isp.cpp:1487]:Chn:0 reset the advanced cfg
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:630]:set_drc_strengh, channel: 1, value:-1, mode:0
+[Nvt52xAdapter_isp.cpp:802]:ae_set_target_y,value:128
+[Nvt52xAdapter_isp.cpp:1425]:ae_set_auto_lowlight, channel: 1, value:1
+
+
+ mode:0,AE:1 - 333; GAIN:1 - 256
+[isp.cpp:267]:====>ecs :1
+[isp.cpp:1487]:Chn:1 reset the advanced cfg
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:630]:set_drc_strengh, channel: 0, value:-1, mode:0
+[Nvt52xAdapter_isp.cpp:802]:ae_set_target_y,value:128
+[Nvt52xAdapter_isp.cpp:1425]:ae_set_auto_lowlight, channel: 0, value:1
+
+
+ mode:0,AE:1 - 333; GAIN:1 - 128
+[isp.cpp:267]:====>ecs :1
+[alarmcenter.cpp:438]:MD alarm in trigger chn:0, MD state:0, tick=[42988].
+[alarmcenter.cpp:438]:MD alarm in trigger chn:1, MD state:0, tick=[42988].
+on_md_alarm_handle, chn:0, change md to 0
+on_md_alarm_handle, chn:1, change md to 0
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+[save_restart_info][flash_write_count]:(2).
+cur pts:56871132867
+AddPortMapping(80, 80, 192.168.1.152) failed with code -3 (UnknownError)
+[alarmcenter.cpp:555]:on_cbw_stat_notify, stat:1 --->0, mode=0, tick=[47312].
+[alarmcenter.cpp:555]:on_cbw_stat_notify, stat:0 --->0, mode=0, tick=[47313].
+get bino camera height difference failed.
+get bino camera width difference failed.
+get zf table failed.
+get bino camera height difference failed.
+get bino camera width difference failed.
+get zf table failed.
+[enc.cpp:3831]:on_isp_base_notify, x:0, y:0
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 1, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 1, value:128
+[enc.cpp:3831]:on_isp_base_notify, x:0, y:0
+[Nvt52xAdapter_isp.cpp:527]:set_saturation, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:434]:set_contrast, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:476]:set_hue, channel: 0, value:128
+[Nvt52xAdapter_isp.cpp:573]:set_sharpness, channel: 0, value:128
+get bino camera height difference failed.
+get bino camera width difference failed.
+get zf table failed.
+get bino camera height difference failed.
+get bino camera width difference failed.
+get zf table failed.
+[save_isp][flash_write_count]:(3).
+[save_isp][flash_write_count]:(4).
+[save_isp][flash_write_count]:(5).
+[save_isp][flash_write_count]:(6).
+get bino camera height difference failed.
+get bino camera width difference failed.
+get zf table failed.
+get bino camera height difference failed.
+get bino camera width difference failed.
+get zf table failed.
+get bino camera height difference failed.
+get bino camera width difference failed.
+get zf table failed.
+get bino camera height difference failed.
+get bino camera width difference failed.
+get zf table failed.
+[save_md][flash_write_count]:(7).
+[Nvt52xAdapter_ai.cpp:969]:not support ai type:1
+[save_md][flash_write_count]:(8).
+[save_person_detect][flash_write_count]:(9).
+[enc.cpp:3831]:on_isp_base_notify, x:0, y:0
+[Nvt52xAdapter_isp.cpp:756]:mirror: ENABLE
+[Nvt52xAdapter_isp.cpp:757]:flip: DISABLE
+[enc.cpp:3831]:on_isp_base_notify, x:0, y:0
+[save_person_detect][flash_write_count]:(10).
+[Nvt52xAdapter_isp.cpp:756]:mirror: DISABLE
+[Nvt52xAdapter_isp.cpp:757]:flip: ENABLE
+[save_face_detect][flash_write_count]:(11).
+[save_face_detect][flash_write_count]:(12).
+[save_vehicle_detect][flash_write_count]:(13).
+[save_vehicle_detect][flash_write_count]:(14).
+[save_dog_cat_detect][flash_write_count]:(15).
+GetSpecificPortMappingEntry() failed with code -3 (UnknownError)
+upnp [:80 TCP is redirected to p▒▒v▒▒:▒▒▒v▒ (duration=▒▒▒v)
+[alarmcenter.cpp:438]:MD alarm in trigger chn:0, MD state:1, tick=[51970].
+[alarmcenter.cpp:438]:MD alarm in trigger chn:1, MD state:1, tick=[51970].
+on_md_alarm_handle, chn:0, change md to 1
+on_md_alarm_handle, chn:1, change md to 1
+[save_dog_cat_detect][flash_write_count]:(16).
+[save_isp][flash_write_count]:(17).
+[save_isp][flash_write_count]:(18).
+[save_isp][flash_write_count]:(19).
+[save_isp][flash_write_count]:(20).
+[save_md][flash_write_count]:(21).
+get bino camera height difference failed.
+get bino camera width difference failed.
+get zf table failed.
+get bino camera height difference failed.
+get bino camera width difference failed.
+get zf table failed.
+get bino camera height difference failed.
+get bino camera width difference failed.
+get zf table failed.
+get bino camera height difference failed.
+get bino camera width difference failed.
+get zf table failed.
+[Nvt52xAdapter_ai.cpp:969]:not support ai type:1
+[save_md][flash_write_count]:(22).
+[save_person_detect][flash_write_count]:(23).
+[enc.cpp:3831]:on_isp_base_notify, x:0, y:0
+[Nvt52xAdapter_isp.cpp:756]:mirror: ENABLE
+[Nvt52xAdapter_isp.cpp:757]:flip: ENABLE
+[enc.cpp:3831]:on_isp_base_notify, x:0, y:0
+[save_person_detect][flash_write_count]:(24).
+[Nvt52xAdapter_isp.cpp:756]:mirror: DISABLE
+[Nvt52xAdapter_isp.cpp:757]:flip: DISABLE
+[save_face_detect][flash_write_count]:(25).
+[save_face_detect][flash_write_count]:(26).
+[save_vehicle_detect][flash_write_count]:(27).
+[save_vehicle_detect][flash_write_count]:(28).
+[save_dog_cat_detect][flash_write_count]:(29).
+[save_dog_cat_detect][flash_write_count]:(30).
+[save_isp][flash_write_count]:(31).
+[save_isp][flash_write_count]:(32).
+[save_isp][flash_write_count]:(33).
+[save_isp][flash_write_count]:(34).
+[alarmcenter.cpp:756]:on_white_light_stat_notify, stat:1 --->0.
+[alarmcenter.cpp:756]:on_white_light_stat_notify, stat:0 --->0.
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+on_md_alarm_handle, chn:0, change md to 0
+[alarmcenter.cpp:438]:MD alarm in trigger chn:0, MD state:0, tick=[55183].
+[alarmcenter.cpp:438]:MD alarm in trigger chn:1, MD state:0, tick=[55188].
+on_md_alarm_handle, chn:1, change md to 0
+[alarmcenter.cpp:438]:MD alarm in trigger chn:0, MD state:1, tick=[59418].
+[alarmcenter.cpp:438]:MD alarm in trigger chn:1, MD state:1, tick=[59418].
+[alarmout_push.cpp:70]:-------->>alarm push[0] START, event:(chn, device)=(0x1, 0x0), tick=[59]s.
+on_md_alarm_handle, chn:0, change md to 1
+on_md_alarm_handle, chn:1, change md to 1
+AddPortMapping(443, 443, 192.168.1.152) failed with code -3 (UnknownError)
+[alarmcenter.cpp:438]:MD alarm in trigger chn:0, MD state:0, tick=[63338].
+[alarmcenter.cpp:438]:MD alarm in trigger chn:1, MD state:0, tick=[63338].
+on_md_alarm_handle, chn:0, change md to 0
+on_md_alarm_handle, chn:1, change md to 0
+
+Login timed out after 60 seconds
+(none) login: GetSpecificPortMappingEntry() failed with code -3 (UnknownError)
+upnp [:443 TCP is redirected to p▒▒v▒▒:▒▒▒v▒ (duration=▒▒▒v)
+AddPortMapping(554, 554, 192.168.1.152) failed with code -3 (UnknownError)
+GetSpecificPortMappingEntry() failed with code -3 (UnknownError)
+upnp [:554 TCP is redirected to p▒▒v▒▒:▒▒▒v▒ (duration=▒▒▒v)
+[save_md][flash_write_count]:(35).
+[save_md][flash_write_count]:(36).
+[save_md][flash_write_count]:(37).
+[save_md][flash_write_count]:(38).
+AddPortMapping(1935, 1935, 192.168.1.152) failed with code -3 (UnknownError)
+fatal error bc_rpc_packet_get DECM 296 MSG_SERVICE_NTPTIME_SYNC 0x1 0, maybe get a free packet
+GetSpecificPortMappingEntry() failed with code -3 (UnknownError)
+upnp [:1935 TCP is redirected to p▒▒v▒▒:▒▒▒v▒ (duration=▒▒▒v)
+cur pts:56923982925
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+AddPortMapping(8000, 8000, 192.168.1.152) failed with code -3 (UnknownError)
+GetSpecificPortMappingEntry() failed with code -3 (UnknownError)
+upnp [:8000 TCP is redirected to p▒▒v▒▒:▒▒▒v▒ (duration=▒▒▒v)
+[cmd]./upnpc -r 9000 TCP 80 TCP 443 TCP 554 TCP 1935 TCP 8000 TCP "P330M" [ret]:0
+nginx_restart_stm in
+[cmd]cp /mnt/app/www/index.html.org /mnt/tmp/index.html [ret]:0
+[cmd]sed -i -e 's/"MEDIA_PORT"/9000/g' /mnt/tmp/index.html [ret]:0
+[cmd]mkdir /mnt/tmp/logs;mkdir /mnt/tmp/run; [ret]:0
+[cmd]cp /mnt/app/nginx_conf/conf/nginx.conf /mnt/tmp/nginx.conf [ret]:0
+[cmd]cp /mnt/app/nginx_conf/conf/mime.types /mnt/tmp/mime.types [ret]:0
+rm: can't remove '/mnt/para/*.crt': No such file or directory
+[cmd]rm /mnt/para/*.crt [ret]:256
+rm: can't remove '/mnt/para/*.key': No such file or directory
+[cmd]rm /mnt/para/*.key [ret]:256
+[cmd]/mnt/app/nginx -c /mnt/tmp/nginx.conf -p /mnt/tmp/& [ret]:0
+nginx_restart_stm nginx start ok!!!
+Configuration:
+  probe_count 1
+  (debug)     1
+  goodness    0
+  hostname    192.168.1.1
+  interval    7
+  live        0
+  local_port  123
+  min_delay   800.000000
+  set_clock   0
+  cross_check 1
+ntp host:192.168.1.1 port:123.
+setup receive ok
+setup transmit ok
+Listening...
+Sending ...
+packet of length 48 received
+LI=0  VN=3  Mode=4  Stratum=2  Poll=12  Precision=-9
+Delay=3112.8  Dispersion=65155.0  Refid=116.49.102.213
+Reference 3972640979.986944
+(sent)    3972642524.100358
+Originate 3972642524.100358
+Receive   3972642524.103550
+Transmit  3972642524.103574
+Our recv  3972642524.113571
+Total elapsed:  13325.00
+Server stall:      22.89
+Slop:           13302.11
+Skew:           -2882.25
+Frequency:             0
+ day   second     elapsed    stall     skew  dispersion  freq
+45979 56924.113   13325.0     22.9   -2882.3  65155.0         0
+fatal error bc_rpc_packet_get /dev/DECM 2088 MSG_SERVICE_NTPTIME_SYNC 0x1 8, maybe get a free packet
+ngx_rtmp_mp4_postconfiguration called.
+upnp devices list:
+   desc: http://192.168.1.159:8008/ssdp/device-desc.xml
+   st: upnp:rootdevice
+upnp find one, is a gateway?:
+   http://192.168.1.159:8008/
+upnp trying to continue anyway
+UPNP_DeletePortMapping() returned : -3
+
+Login timed out after 60 seconds
+(none) login: UPNP_DeletePortMapping() returned : -3
+
+(none) login: root
+Password: UPNP_DeletePortMapping() returned : -3
+
+UPNP_DeletePortMapping() returned : -3
+Login incorrect
+(none) login: admin
+Password: UPNP_DeletePortMapping() returned : -3
+
+UPNP_DeletePortMapping() returned : -3
+[cmd]./upnpc -d 9000 TCP 80 TCP 443 TCP 554 TCP 1935 TCP 8000 TCP [ret]:0
+Login incorrect
+(none) login: nets version detect, client ip:192.168.1.241 ver:2
+nets new encrypt version detect, client ip:192.168.1.241 ver:1
+statistics_reset int
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+nets version detect, client ip:192.168.1.241 ver:2
+nets new encrypt version detect, client ip:192.168.1.241 ver:1
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+statistics_reset int
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+upnp devices list:
+   desc: http://192.168.1.159:8008/ssdp/device-desc.xml
+   st: upnp:rootdevice
+upnp find one, is a gateway?:
+   http://192.168.1.159:8008/
+upnp trying to continue anyway
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+fatal error bc_rpc_packet_get DECM 341 MSG_SERVICE_NTPTIME_SYNC 0x1 0, maybe get a free packet
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+AddPortMapping(9000, 9000, 192.168.1.152) failed with code -3 (UnknownError)
+GetSpecificPortMappingEntry() failed with code -3 (UnknownError)
+upnp [:9000 TCP is redirected to p+▒v▒q^:▒M▒v▒ (duration=▒M▒v)
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+AddPortMapping(80, 80, 192.168.1.152) failed with code -3 (UnknownError)
+[func:Sfm_scan_storage][line:54][level:01]opendir (/dev/hd/) Failed
+[func:Sfm_get_storage_device_info][line:756][level:01]Sfm_scan_storage Failed(0, 0)
+GetSpecificPortMappingEntry() failed with code -3 (UnknownError)
+upnp [:80 TCP is redirected to p+▒v▒q^:▒M▒v▒ (duration=▒M▒v)
+
+Login timed out after 60 seconds
+(none) login:
