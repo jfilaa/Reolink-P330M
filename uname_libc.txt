@@ -1,0 +1,12 @@
+[root@BAICHUAN:~]# uname -a
+Linux BAICHUAN 4.19.91 #8 PREEMPT Thu Nov 24 16:25:18 CST 2022 armv7l GNU/Linux
+[root@BAICHUAN:~]# /lib/libc.so.6
+GNU C Library (Buildroot) stable release version 2.29.
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.
+Compiled by GNU CC version 6.5.0.
+libc ABIs: UNIQUE ABSOLUTE
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/libc/bugs.html>.
