@@ -1,0 +1,348 @@
+Booting Linux on physical CPU 0x0
+Linux version 4.19.91 (zyc@ubuntu) (gcc version 8.4.0 (Buildroot 2020.02.9-3-g58c1c2e-dirty)) #8 PREEMPT Thu Nov 24 16:25:18 CST 2022
+CPU: ARMv7 Processor [414fc091] revision 1 (ARMv7), cr=10c5387d
+CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+OF: fdt: Machine model: Novatek NA51089
+Memory policy: Data cache writeback
+OF: fdt: Reserved memory: failed to reserve memory for node 'cma0@0x04000000': base 0x04000000, size 0 MiB
+On node 0 totalpages: 65536
+  Normal zone: 512 pages used for memmap
+  Normal zone: 0 pages reserved
+  Normal zone: 65536 pages, LIFO batch:15
+CPU: All CPU(s) started in SVC mode.
+random: get_random_bytes called from start_kernel+0x80/0x354 with crng_init=0
+pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+pcpu-alloc: [0] 0 
+Built 1 zonelists, mobility grouping on.  Total pages: 65024
+Kernel command line: earlyprintk console=ttyS0,115200 rootwait nprofile_irq_duration=on ubi.block=0,0 root=/dev/ubiblock0_0 rootfstype=squashfs init=/linuxrc   ubi.mtd=4 ro   bootts=188309,883996 resume_addr=0x00200088 user_debug=0xff 
+Dentry cache hash table entries: 32768 (order: 5, 131072 bytes)
+Inode-cache hash table entries: 16384 (order: 4, 65536 bytes)
+Memory: 254196K/262144K available (3746K kernel code, 222K rwdata, 1192K rodata, 176K init, 161K bss, 7948K reserved, 0K cma-reserved)
+Virtual kernel memory layout:
+    vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+    fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+    vmalloc : 0x90800000 - 0xff800000   (1776 MB)
+    lowmem  : 0x80000000 - 0x90000000   ( 256 MB)
+    modules : 0x7f000000 - 0x80000000   (  16 MB)
+      .text : 0x80008000 - 0x803b0ba0   (3747 kB)
+      .init : 0x804dc000 - 0x80508000   ( 176 kB)
+      .data : 0x80508000 - 0x8053fa60   ( 223 kB)
+       .bss : 0x8053fa75 - 0x8056812c   ( 162 kB)
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+rcu: Preemptible hierarchical RCU implementation.
+	Tasks RCU enabled.
+NR_IRQS: 384
+L2C-310 enabling early BRESP for Cortex-A9
+L2C-310 full line of zeros enabled for Cortex-A9
+L2C-310 ID prefetch enabled, offset 1 lines
+L2C-310 dynamic clock gating enabled, standby mode enabled
+L2C-310 cache controller enabled, 8 ways, 128 kB
+L2C-310: CACHE_ID 0x410000c9, AUX_CTRL 0x76420001
+APIs of flush/clean all cache are supported
+novatek_clock_init
+sched_clock: 64 bits at 120MHz, resolution 8ns, wraps every 4398046511102ns
+clocksource: arm_global_timer: mask: 0xffffffffffffffff max_cycles: 0x3759f22983, max_idle_ns: 881590413697 ns
+Switching to timer-based delay loop, resolution 8ns
+Calibrating delay loop (skipped), value calculated using timer frequency.. 240.00 BogoMIPS (lpj=1200000)
+pid_max: default: 4096 minimum: 301
+Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+CPU: Testing write buffer coherency: ok
+Setting up static identity map for 0x81c0 - 0x81fc
+rcu: Hierarchical SRCU implementation.
+devtmpfs: initialized
+VFP support v0.3: implementor 41 architecture 3 part 30 variant 9 rev 4
+NVTBOOTTS: nvt_bootts_proc_init initial success
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+futex hash table entries: 16 (order: -4, 448 bytes)
+pinctrl core: initialized pinctrl subsystem
+NET: Registered protocol family 16
+DMA: preallocated 256 KiB pool for atomic coherent allocations
+*** nvt_poweroff_setup 
+nvt_otp_module_init
+nvt_vos: 1.00.007 (Nov 16 2022 17:27:36)
+*** disable_cnn Get CNN2 Clock error
+nvt_gpio f0070000.gpio: Register nvt_gpio_probe successfully
+nvt_i2c f0220000.i2c: i2c_nvtim_busclr
+nvt_i2c f0220000.i2c: i2c_nvtim_rst_module: staus 0x10000000
+nvt_i2c f0220000.i2c: Register nvtim_i2c_probe successfully ver:1.00.016
+nvt_i2c f0350000.i2c2: i2c_nvtim_busclr
+nvt_i2c f0350000.i2c2: i2c_nvtim_rst_module: staus 0x10000000
+nvt_i2c f0350000.i2c2: Register nvtim_i2c_probe successfully ver:1.00.016
+nvt_i2c f03a0000.i2c3: i2c_nvtim_busclr
+nvt_i2c f03a0000.i2c3: i2c_nvtim_rst_module: staus 0x10000000
+nvt_i2c f03a0000.i2c3: Register nvtim_i2c_probe successfully ver:1.00.016
+clocksource: Switched to clocksource arm_global_timer
+kdrv_builtin_init init module ==========
+nvt_jpg version: 1.00.011
+kdrv_builtin_init init module ==========
+NET: Registered protocol family 2
+tcp_listen_portaddr_hash hash table entries: 256 (order: 0, 6144 bytes)
+TCP established hash table entries: 2048 (order: 1, 8192 bytes)
+TCP bind hash table entries: 2048 (order: 3, 40960 bytes)
+TCP: Hash tables configured (established 2048 bind 2048)
+UDP hash table entries: 128 (order: 0, 6144 bytes)
+UDP-Lite hash table entries: 128 (order: 0, 6144 bytes)
+NET: Registered protocol family 1
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+Initialise system trusted keyrings
+workingset: timestamp_bits=30 max_order=16 bucket_order=0
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+yaffs: yaffs Installing.
+Key type asymmetric registered
+Asymmetric key parser 'x509' registered
+Block layer SCSI generic (bsg) driver version 0.4 loaded (major 249)
+io scheduler noop registered (default)
+comm pwm driver probe
+f0290000.uart: ttyS0 at MMIO 0xf0290000 (irq = 6, base_baud = 1500000) is a NVT
+nvt_serial: console setup on port #0
+console [ttyS0] enabled
+f0300000.uart: ttyS1 at MMIO 0xf0300000 (irq = 7, base_baud = 3000000) is a NVT
+f0310000.uart: ttyS2 at MMIO 0xf0310000 (irq = 8, base_baud = 3000000) is a NVT
+nvt_serial: driver initialized
+loop: module loaded
+nand: device found, Manufacturer ID: 0xc8, Chip ID: 0x51
+nand: ESMT GD5F1GQ4UEYIH 1GiB 3.3V
+nand: 128 MiB, SLC, erase size: 128 KiB, page size: 2048, OOB size: 128
+Scanning device for bad blocks
+random: fast init done
+Bad eraseblock 824 at 0x000006700000
+Bad eraseblock 916 at 0x000007280000
+Bad eraseblock 1022 at 0x000007fc0000
+spi_nand f0400000.nand: 4-bit mode @ 80000000 Hz
+11 fixed-partitions partitions found on MTD device spi_nand.0
+Creating 11 MTD partitions on "spi_nand.0":
+0x000000000000-0x000000040000 : "loader"
+0x000000040000-0x000000080000 : "fdt"
+0x000000080000-0x000000180000 : "uboot"
+0x000000180000-0x000000580000 : "kernel"
+0x000000580000-0x000001480000 : "rootfs"
+0x000001480000-0x000001f80000 : "app"
+0x000001f80000-0x000002380000 : "para"
+0x000002380000-0x000002400000 : "sp"
+0x000002400000-0x000002480000 : "ext_para"
+0x000002480000-0x000004000000 : "download"
+0x000000000000-0x000004000000 : "all"
+nvt_rtc f0060000.rtc: rtc core: registered nvt_rtc as rtc0
+nvt_adc_probe: f0260000.adc done voltage 2688 ver 1.02.100
+thermal thermal_zone0: Thermal Sensor probe
+NET: Registered protocol family 17
+Registering SWP/SWPB emulation handler
+Loading compiled-in X.509 certificates
+ubi0: default fastmap pool size: 8
+ubi0: default fastmap WL pool size: 4
+ubi0: attaching mtd4
+ubi0: scanning is finished
+ubi0 warning: ubi_eba_init: cannot reserve enough PEBs for bad PEB handling, reserved 24, need 30
+ubi0: attached mtd4 (name "rootfs", size 15 MiB)
+ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+ubi0: good PEBs: 120, bad PEBs: 0, corrupted PEBs: 0
+ubi0: user volume: 1, internal volumes: 1, max. volumes count: 128
+ubi0: max/mean erase counter: 1/0, WL threshold: 4096, image sequence number: 665391752
+ubi0: available PEBs: 0, total reserved PEBs: 120, PEBs reserved for bad PEB handling: 24
+ubi0: background thread "ubi_bgt0d" started, PID 41
+block ubiblock0_0: created from ubi0:0(rootfs)
+nvt_rtc f0060000.rtc: setting system clock to 2025-11-21 17:34:07 UTC (1763746447)
+VFS: Mounted root (squashfs filesystem) readonly on device 254:0.
+devtmpfs: mounted
+Freeing unused kernel memory: 176K
+This architecture does not have kernel memory protection.
+Run /linuxrc as init process
+ubi1: default fastmap pool size: 8
+ubi1: default fastmap WL pool size: 4
+ubi1: attaching mtd5
+ubi1: scanning is finished
+ubi1 warning: ubi_eba_init: cannot reserve enough PEBs for bad PEB handling, reserved 12, need 30
+ubi1: attached mtd5 (name "app", size 11 MiB)
+ubi1: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+ubi1: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+ubi1: VID header offset: 2048 (aligned 2048), data offset: 4096
+ubi1: good PEBs: 88, bad PEBs: 0, corrupted PEBs: 0
+ubi1: user volume: 1, internal volumes: 1, max. volumes count: 128
+ubi1: max/mean erase counter: 1/0, WL threshold: 4096, image sequence number: 1757879913
+ubi1: available PEBs: 0, total reserved PEBs: 88, PEBs reserved for bad PEB handling: 12
+ubi1: background thread "ubi_bgt1d" started, PID 49
+block ubiblock1_0: created from ubi1:0(app)
+nvt_mmc f0420000.mmc: cd_gpio is invalid
+nvt_mmc f0420000.mmc: Using DMA, 4-bit mode sampling Positive edge, mmc0
+nvt_mmc f0500000.mmc: Using DMA, 4-bit mode sampling Positive edge, mmc1
+mmc0: new high speed SDHC card at address aaaa
+mmcblk0: mmc0:aaaa SL32G 29.7 GiB 
+ mmcblk0: p1
+nvtmem: loading out-of-tree module taints kernel.
+nvtmem: module license 'Proprietary' taints kernel.
+Disabling lock debugging due to kernel taint
+NVTMEM: 0.0.2
+log.ko v1.4: Nov  8 2022 16:10:33 (mmap 0x8e880000 size 0x21800)
+
+LOG base 0x8f371c00(ddr0) size 1K (start pointer 0x7f067df4)
+PAGE_OFFSET(0x80000000) VMALLOC START(0x90800000) HZ(100)
+nvt_sif_init:
+nvt_sif_probe:f0240000.sif
+nvt_sif_probe:0. resource:0xf0240000 size:0x200
+nvt_sif_probe:IRQ 0. ID46
+nvt_sif_probe:DevID Major:253 minor:10
+nvt_sif_drv_init:
+
+
+nvt_csi_probe:not fast boot
+nvtmpp_init_mmz: ddr1 pa = 0x10000000 va = 0x91000000 , size = 0x10000000
+affine_neon_module_initial: successfully
+
+faile to get clock0 source
+h26x kdrv version: 0.3.11, nvt codec version 0.3.11.0
+nvt_audlib_aac_module_init:
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8F322E00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8FA8DF00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E0E3A00
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+nvtim_init_usbhc
+nvtim_init_usbhc assert reset
+R0x40=0x30230001
+ehci-nvtivot f0600000.nvt_usb2host: usbhc-nvtivot
+ehci-nvtivot f0600000.nvt_usb2host: new USB bus registered, assigned bus number 1
+ehci-nvtivot f0600000.nvt_usb2host: irq 52, io mem 0xff600000
+ehci-nvtivot f0600000.nvt_usb2host: USB 2.0 started, EHCI 1.00, overcurrent ignored
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 1 port detected
+usbcore: registered new interface driver option
+usbserial: USB Serial support registered for GSM modem (1-port)
+nvtim_patch_usbhc channel
+usbcore: registered new interface driver cdc_wdm
+usbcore: registered new interface driver qmi_wwan_q
+libphy: Fixed MDIO Bus: probed
+nvt_eth_env_probe: get IO MEM 0xfd2b0000
+nvt_eth_env_probe: pinmux detect emb phy 0x0
+DWC_ETH_QOS: Phy detected at ID/ADDR 0
+libphy: dwc_phy: probed
+nvt_resume: find node
+nvt_resume: led-inv = 0
+nvt_resume: pinmux 0x0
+Supports TSO, SG and TX COE
+Supports RX COE and GRO
+phydev exist: resume phy
+nvt_resume: find node
+nvt_resume: led-inv = 0
+nvt_resume: pinmux 0x0
+DWC_ETH_QOS_yinit: apb_clk 120000000 Hz
+Queue0 Tx fifo size 2048, Rx fifo size 2048
+Disabled JUMBO pkt
+Enabled Rx watchdog timer
+Enabled TSO
+Disabled Rx Split header mode
+phydev exist: start phy
+yaffs: dev is 32505862 name is "mtdblock6" rw
+yaffs: passed flags "inband-tags"
+yaffs: yaffs: Attempting MTD mount of 31.6,"mtdblock6"
+yaffs: 5 blocks to be sorted...
+yaffs: yaffs_read_super: is_checkpointed 0
+DWC_ETH_QOS_adjust_link: start tx/rx
+DWC_ETH_QOS f02b0000.eth eth0: Link is Up - 100Mbps/Full - flow control rx/tx
+FAT-fs (mmcblk0p1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+watchdog: watchdog0: watchdog did not stop!
+phydev exist: resume phy
+nvt_resume: find node
+nvt_resume: led-inv = 0
+nvt_resume: pinmux 0x0
+DWC_ETH_QOS_yinit: apb_clk 120000000 Hz
+Queue0 Tx fifo size 2048, Rx fifo size 2048
+Disabled JUMBO pkt
+Enabled Rx watchdog timer
+Enabled TSO
+Disabled Rx Split header mode
+phydev exist: start phy
+nvt_resume: find node
+nvt_resume: led-inv = 0
+nvt_resume: pinmux 0x0
+random: crng init done
+hd_common_init
+process id 0 _isf_init 0
+venc init: config tile cut if w>2048 (LL fast)
+csi_platform_clk_enable....
+DWC_ETH_QOS_adjust_link: start tx/rx
+DWC_ETH_QOS f02b0000.eth eth0: Link is Up - 100Mbps/Full - flow control rx/tx
+vdoprc1 CNN on => stripe LV1, force to LV2!
+vdoprc1 init: stripe LV2 = cut w>2048, GDC = off, 2D_LUT off after cut (LL fast)
+data_mode= 3  
+data_mode= 3  
+data_mode= 3  
+csi_platform_clk_disable....
+csi_platform_clk_enable....
+data_mode= 3  
+ERR:ctl_sie_set_trig() id 1 SIE clk 320000000 < sensor require min 378000000
+csi_platform_clk_enable....
+csi_open:CSI HW reset!
+========== AE_CBMSG_PREVIEWSTABLE ==========
+vdoprc0 CNN on => stripe LV1, force to LV2!
+vdoprc0 init: stripe LV2 = cut w>2048, GDC = off, 2D_LUT off after cut (LL fast)
+ERR:sen_get_modesel_os03b10() MODE = 0  
+ERR:sen_get_modesel_os03b10() MODE = 0  
+ERR:sen_get_modesel_os03b10() MODE = 0  
+ERR:sen_get_modesel_os03b10() MODE = 0  
+========== AE_CBMSG_PREVIEWSTABLE ==========
+WRN:isp_dev_get_sync_item() sync info not match (0, 24, 0, 23, 2) 
+WRN:isp_dev_get_sync_item() sync info not match (0, 24, 0, 23, 2) 
+WRN:isp_dev_get_sync_item() sync info not match (0, 24, 0, 23, 2) 
+WRN:isp_dev_get_sync_item() sync info not match (0, 24, 0, 23, 2) 
+WRN:isp_dev_get_sync_item() sync info not match (0, 25, 0, 0, 2) 
+WRN:isp_dev_get_sync_item() sync info not match (0, 25, 0, 0, 2) 
+WRN:isp_dev_get_sync_item() sync info not match (0, 25, 0, 0, 2) 
+WRN:isp_dev_get_sync_item() sync info not match (0, 25, 0, 0, 2) 
+WRN:isp_dev_get_sync_item() sync info not match (0, 25, 0, 0, 2) 
+WRN:isp_dev_get_sync_item() sync info not match (0, 25, 0, 0, 2) 
+WRN:isp_dev_get_sync_item() sync info not match (0, 26, 1, 1, 2) 
+WRN:isp_dev_get_sync_item() sync info not match (0, 26, 1, 1, 2) 
+WRN:isp_dev_get_sync_item() sync info not match (0, 26, 1, 1, 2) 
+WRN:isp_dev_get_sync_item() sync info not match (0, 26, 1, 1, 2) 
+WRN:isp_dev_get_sync_item() sync info not match (0, 26, 1, 1, 2) 
+WRN:isp_dev_get_sync_item() sync info not match (0, 27, 2, 2, 2) 
+WRN:isp_dev_get_sync_item() sync info not match (0, 27, 2, 2, 2) 
+WRN:isp_dev_get_sync_item() sync info not match (0, 27, 2, 2, 2) 
+WRN:isp_dev_get_sync_item() sync info not match (0, 27, 2, 2, 2) 
+WRN:isp_dev_get_sync_item() sync info not match (0, 27, 2, 2, 2) 
+ERR:vos_file_open() open [/mnt/app/isp/isp520_sc830ai_day-01_dpc.bin] failed, ret -2
+ERR:vos_file_open() open [/mnt/app/isp/isp520_sc830ai_day-01_ecs.bin] failed, ret -2
+ERR:vos_file_open() open [/mnt/app/isp/isp520_sc830ai_day-01_ecs_auto_0.bin] failed, ret -2
+ERR:vos_file_open() open [/mnt/app/isp/isp520_sc830ai_day-01_ecs_auto_1.bin] failed, ret -2
+ERR:vos_file_open() open [/mnt/app/isp/isp520_sc830ai_day-01_ecs_auto_2.bin] failed, ret -2
+ERR:vos_file_open() open [/mnt/app/isp/isp520_sc830ai_day-01_lut2d.bin] failed, ret -2
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8B3D5700
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3C3900
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3C3000
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3C3900
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3C3800
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3C3100
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3C3200
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3C3300
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3C3400
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3C3000
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3C3500
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3C3600
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3CCC00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3CC200
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3CCD00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3CC800
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3CC600
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3CC000
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3CC700
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3CC900
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3CCC00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3CCC00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3CC200
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3CCD00
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3CC800
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3CC600
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3CC000
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3CC900
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3CC700
+ERR:vos_file_close() vfs_fsync fail, vos_file 0x8E3CCC00
+WRN:md_platform_set_clk_rate() MDBC: Input frequency 240 round to 240
+exe (470): drop_caches: 3
