@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <title>ANSI → HTML viewer</title>
+  <style>
+    body { background:#111; color:#ddd; font-family: ui-monospace, Menlo, Consolas, monospace; }
+    pre { white-space: pre-wrap; word-break: break-word; }
+
+    /* Foreground */
+    .fg-30 { color:#000; } .fg-31 { color:#d14; } .fg-32 { color:#39c05a; }
+    .fg-33 { color:#e5c07b; } .fg-34 { color:#61afef; } .fg-35 { color:#c678dd; }
+    .fg-36 { color:#56b6c2; } .fg-37 { color:#e6e6e6; }
+    .fg-90 { color:#666; } .fg-91 { color:#ff6b6b; } .fg-92 { color:#7ce284; }
+    .fg-93 { color:#ffd86b; } .fg-94 { color:#7da6ff; } .fg-95 { color:#ff8bff; }
+    .fg-96 { color:#80e8ff; } .fg-97 { color:#ffffff; }
+
+    /* Background */
+    .bg-40 { background:#000; } .bg-41 { background:#a00; } .bg-42 { background:#0a0; }
+    .bg-43 { background:#aa0; } .bg-44 { background:#00a; } .bg-45 { background:#a0a; }
+    .bg-46 { background:#0aa; } .bg-47 { background:#ddd; }
+    .bg-100 { background:#333; } .bg-101 { background:#d44; } .bg-102 { background:#3d3; }
+    .bg-103 { background:#dd3; } .bg-104 { background:#44d; } .bg-105 { background:#d4d; }
+    .bg-106 { background:#4dd; } .bg-107 { background:#fff; }
+
+    /* Attributes */
+    .bold { font-weight:700; }
+    .italic { font-style: italic; }
+    .underline { text-decoration: underline; }
+    .inverse { filter: invert(100%); }
+  </style>
+</head>
+<body>
+  <h2>ANSI log viewer</h2>
+  <input type="file" id="fileInput" accept=".txt,.log" />
+  <pre id="output"></pre>
+
+<script>
+function normalizeEscapes(str) {
+  // převod doslovných sekvencí "\x1B" nebo "\u001b" na skutečný ESC znak
+  return str.replace(/\\x1B/gi, '\x1b').replace(/\\u001b/gi, '\x1b');
+}
+
+function ansiToHtml(input) {
+  const ESC = '\x1b';
+  const safe = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+  let s = normalizeEscapes(input);
+  let parts = s.split(ESC + '[');
+  let html = safe(parts[0]);
+  let classes = new Set();
+
+  const clsAttr = () => classes.size ? ' class="' + Array.from(classes).join(' ') + '"' : '';
+
+  for (let i = 1; i < parts.length; i++) {
+    const part = parts[i];
+    const mPos = part.indexOf('m');
+    if (mPos === -1) {
+      // neúplná SGR sekvence – vypiš doslova
+      html += safe(ESC + '[' + part);
+      continue;
+    }
+    const codeStr = part.slice(0, mPos);
+    const rest = part.slice(mPos + 1);
+
+    // parse kódů, např. "0;32" → [0,32]
+    const codes = codeStr.split(';').filter(c => c.length).map(c => Number(c));
+
+    // Pokud je mezi kódy 0, resetujeme vše hned
+    if (codes.includes(0) || codes.length === 0) {
+      classes.clear();
+    }
+
+    // aplikuj kódy ve správném pořadí
+    for (const c of codes) {
+      if (c === 0) { classes.clear(); }
+      else if (c === 1) classes.add('bold');
+      else if (c === 3) classes.add('italic');
+      else if (c === 4) classes.add('underline');
+      else if (c === 7) classes.add('inverse');
+
+      else if (c >= 30 && c <= 37 || c >= 90 && c <= 97) {
+        // foreground
+        for (const k of Array.from(classes)) if (k.startsWith('fg-')) classes.delete(k);
+        classes.add('fg-' + c);
+      } else if (c >= 40 && c <= 47 || c >= 100 && c <= 107) {
+        // background
+        for (const k of Array.from(classes)) if (k.startsWith('bg-')) classes.delete(k);
+        classes.add('bg-' + c);
+      } else if (c === 22) classes.delete('bold');      // reset bold
+      else if (c === 23) classes.delete('italic');     // reset italic
+      else if (c === 24) classes.delete('underline');  // reset underline
+      else if (c === 27) classes.delete('inverse');    // reset inverse
+      else if (c === 39) { // reset foreground
+        for (const k of Array.from(classes)) if (k.startsWith('fg-')) classes.delete(k);
+      } else if (c === 49) { // reset background
+        for (const k of Array.from(classes)) if (k.startsWith('bg-')) classes.delete(k);
+      }
+      // (volitelně: 38/48 pro 256/truecolor by vyžadovalo detailní parser)
+    }
+
+    html += '<span' + clsAttr() + '>' + safe(rest) + '</span>';
+  }
+
+  return html;
+}
+
+document.getElementById('fileInput').addEventListener('change', e => {
+  const file = e.target.files && e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    const text = reader.result;
+    document.getElementById('output').innerHTML = ansiToHtml(text);
+  };
+  reader.readAsText(file);
+});
+</script>
+</body>
+</html>
